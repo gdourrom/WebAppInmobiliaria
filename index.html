@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <!-- Fontawesome -->
+        <script src="https://kit.fontawesome.com/96f039ea8c.js" crossorigin="anonymous"></script>
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+        <!-- Custom styles -->
+        <link rel="stylesheet" href="estilos/general.css">
+        <link rel="stylesheet" href="estilos/navigation.css">
+        <link rel="stylesheet" href="estilos/text.css">
+        <link rel="stylesheet" href="estilos/index.css">
+
+        <title>Mi casa</title>
+    </head>
+    <body>
+        <!-- Navegacion Desktop -->
+        <header class="desktop-menu">
+            <a href="index.html">
+                <img class="logo" src="imagenes/logo.png">
+            </a>
+
+            <nav class="desktop-menu-actions">
+                <a href="inmuebles.html">Venta</a>
+                <a href="inmuebles.html">Alquiler</a>
+                <a href="inmuebles.html">Proyectos</a>
+                <a href="inmobiliarias.html">Inmobiliarias</a>
+                <a class="login-button" href="inicio-de-sesion.html">Iniciar Sesión</a>
+            </nav>
+        </header>
+
+        <!-- Navegacion Mobile -->
+        <header class="mobile-menu">
+            <img class="logo" src="imagenes/logo.png">
+
+            <button onclick="toggleMobileMenu()">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
+        </header>
+
+        <nav class="mobile-menu-actions">
+            <a href="#">Venta</a>
+            <a href="#">Alquiler</a>
+            <a href="#">Proyectos</a>
+            <a href="#">Inmobiliarias</a>
+            <a class="login-button" href="#">Iniciar Sesión</a>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main>
+            <!-- TODO: Banner grande con texto y caja de busqueda -->
+            <div class="search-section">
+                <!-- TODO: Texto para introducir al usuario -->
+                <!-- TODO: Caja de busqueda + menus desplegables -->
+                <h1>Alquiler y venta de apartamentos y casas en Uruguay</h1>
+                <input type="text" placeholder="Ingrese su busqueda aqui ...">
+                <button onclick="search()">Buscar</button>
+            </div>
+
+            <!-- TODO: Seccion de venta de banners -->
+            <div class="banners-section"></div>
+
+            <!-- TODO: Filtros pre-armados para busquedas tipicamente utilizadas por lo usuarios -->
+            <div class="quick-filters-section"></div>
+        </main>
+
+        <!-- Pie de pagina -->
+        <footer>
+            <!-- TODO: Links a redes sociales -->
+            <!-- TODO: Copyright con fecha dinamica -->
+        </footer>
+
+        <!-- jQuery, Popper.js, Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        <!-- Custom scripts -->
+        <script src="scripts/menu.js"></script>
+        <script src="scripts/footer.js"></script>
+        <script src="scripts/search.js"></script>
+    </body>
+</html>

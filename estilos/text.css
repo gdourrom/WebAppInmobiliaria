@@ -1,0 +1,14 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.desktop-menu > nav > a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.mobile-menu-actions > a {
+    color: #fff;
+    font-size: 1.1rem;
+    text-decoration: none;
+}

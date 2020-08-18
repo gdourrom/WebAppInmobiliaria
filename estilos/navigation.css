@@ -1,0 +1,97 @@
+.desktop-menu,
+.mobile-menu {
+    background-color: #798f67;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+/* Menu desktop */
+.desktop-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.desktop-menu .logo,
+.mobile-menu .logo {
+    height: 50px;
+    margin: 10px;
+}
+
+.desktop-menu > nav > a {
+    border: 3px solid #6b7562;
+    border-radius: 4px;
+    background-color: #707d65;
+    padding: 7px;
+    margin-left: 6px;
+    transition: background-color ease .3s;
+}
+
+.desktop-menu > nav > a:hover {
+    background-color: #78846e;
+    transition: background-color ease .3s;
+}
+
+.desktop-menu > nav > a.login-button {
+    margin-left: 14px;
+    background-color: #fff;
+    color: #798f67;
+}
+
+.desktop-menu-actions {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+}
+
+/* Menu mobile */
+.mobile-menu {
+    display: none;
+}
+
+.mobile-menu > button {
+    padding: 20px;
+    color: #fff;
+    border: none;
+    background: #8b9a7e;
+}
+
+.mobile-menu > button:focus {
+    outline: none;
+}
+
+.mobile-menu-actions {
+    display: none;
+}
+
+.mobile-menu-actions > a {
+    padding: 15px;
+    background-color: #8b9a7e;
+    transition: background-color ease .4s;
+    border-bottom: 1px solid #798f67;
+}
+
+.mobile-menu-actions > a:hover {
+    background-color: #97a58a;
+    transition: background-color ease .3s;
+}
+
+@media (max-width: 800px) {
+    .desktop-menu {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .mobile-menu-actions.opened {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        z-index: 10;
+    }
+}
