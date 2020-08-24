@@ -12,7 +12,11 @@ function getDataFromAPI(filtros) {
         {
             operacion: 'Venta',
             tipoDePropiedad: 'Casa',
-            estado: 'Usado',
+            estado: {
+                enConstruccion: true,
+                usada: false,
+                aEstrenar: false
+            },
             precio: {
                 monto: 145000,
                 divisa: 'USD'
@@ -41,13 +45,18 @@ function getDataFromAPI(filtros) {
                 jardin: true,
                 calefaccion: false,
                 amueblado: false,
-                seguridad: false
+                seguridad: true,
+                piscina: true
             }
         },
         {
             operacion: 'Venta',
-            tipoDePropiedad: 'Casa',
-            estado: 'A estrenar',
+            tipoDePropiedad: 'Apartamento',
+            estado: {
+                enConstruccion: false,
+                usada: false,
+                aEstrenar: true
+            },
             precio: {
                 monto: 210000,
                 divisa: 'USD'
@@ -71,11 +80,51 @@ function getDataFromAPI(filtros) {
             },
             referencia: '',
             amenities: {
-                garaje: true,
+                garaje: false,
                 jardin: true,
-                calefaccion: false,
+                calefaccion: true,
+                amueblado: true,
+                seguridad: true,
+                piscina: false
+            }
+        },
+        {
+            operacion: 'Alquiler',
+            tipoDePropiedad: 'Apartamento',
+            estado: {
+                enConstruccion: false,
+                usada: true,
+                aEstrenar: false
+            },
+            precio: {
+                monto: 21000,
+                divisa: 'UYU'
+            },
+            metraje: {
+                total: 150,
+                edificado: 150
+            },
+            habitaciones: {
+                dormitorios: 2,
+                banos: 1
+            },
+            descripcion: '',
+            imagenes: [
+                'imagenes/inmuebles/inmueble-2-img-1.jpg',
+            ],
+            ubicacion: {
+                departamento: 'Montevideo',
+                barrio: 'Parque Batlle',
+                codigoPostal: '11200'
+            },
+            referencia: '003',
+            amenities: {
+                garaje: true,
+                jardin: false,
+                calefaccion: true,
                 amueblado: false,
-                seguridad: true
+                seguridad: true,
+                piscina: false
             }
         }
     ]
@@ -83,15 +132,36 @@ function getDataFromAPI(filtros) {
     // Esto realmente lo hace el API
     const propiedadesFiltradas = propiedades.filter(
         function (propiedad) {
+            // Tipo de propiedad
+            let mostrarCasas
+            let mostrarApartamentos
+
+            if (filtros.tipoDePropiedad.casa && filtros.tipoDePropiedad.apartamento) {
+                mostrarCasas = true
+                mostrarApartamentos = true
+            } else {
+                mostrarCasas = filtros.tipoDePropiedad.casa ? propiedad.tipoDePropiedad === 'Casa' : true
+                mostrarApartamentos = filtros.tipoDePropiedad.apartamento ? propiedad.tipoDePropiedad === 'Apartamento' : true
+            }
+
+            // Operacion
             const laOperacionCoincide = propiedad.operacion === filtros.tipoDeOperacion
 
-            const casa = filtros.tipoDePropiedad.casa && propiedad.tipoDePropiedad === 'Casa'
-            const apartamento = filtros.tipoDePropiedad.apartamento && propiedad.tipoDePropiedad === 'Apartamento'
+            // Amenities
+            const conGaraje = filtros.amenities.garaje ? propiedad.amenities.garaje : true
+            const tieneSeguridad = filtros.amenities.seguridad ? propiedad.amenities.seguridad : true
+            const tieneJardin = filtros.amenities.jardin ? propiedad.amenities.jardin : true
+            const tieneCalefaccion = filtros.amenities.calefaccion ? propiedad.amenities.calefaccion : true
+            const estaAmueblado = filtros.amenities.amueblado ? propiedad.amenities.amueblado : true
+            const tienePiscina = filtros.amenities.piscina ? propiedad.amenities.piscina : true
 
-            const conGaraje = filtros.amenities.garaje && propiedad.amenities.garaje
-            const tieneSeguridad = filtros.amenities.seguridad && propiedad.amenities.seguridad
+            // Estado 
 
-            return laOperacionCoincide && (casa || apartamento) && (conGaraje || tieneSeguridad)
+            const propiedadEnConstruccion = filtros.estado.enConstruccion ? propiedad.estado.enConstruccion : true
+            const porpiedadUsada = filtros.estado.usada ? propiedad.estado.usada : true
+            const propiedadAEstrenar = filtros.estado.aEstrenar ? propiedad.estado.aEstrenar : true
+            // Resultado del filtro
+            return laOperacionCoincide && mostrarCasas && mostrarApartamentos && conGaraje && tieneSeguridad && tieneJardin && tieneCalefaccion && tienePiscina && estaAmueblado && propiedadAEstrenar && porpiedadUsada && propiedadEnConstruccion
         }
     )
 
@@ -121,7 +191,7 @@ function applyFilter() {
             usado: document.querySelector('#estadoUsado').checked,
         },
         amenities: {
-            garage: document.querySelector('#amenityGarage').checked,
+            garaje: document.querySelector('#amenityGaraje').checked,
             jardin: document.querySelector('#amenityJardin').checked,
             seguridad: document.querySelector('#amenitySeguridad').checked,
             piscina: document.querySelector('#amenityPiscina').checked,
@@ -131,7 +201,7 @@ function applyFilter() {
 
     // Obtenemos la lista de propiedades a mostrar
     const propiedades = getDataFromAPI(filtros)
-    console.log('asd', propiedades)
+  
 
     // Debemos limpiar el contenedor para poder agregarle los nuevos resultados
     container.innerHTML = ''
@@ -181,8 +251,15 @@ function applyFilter() {
 
             // Agregamos el elemento clonado como hijo del contenedor de cards
             container.appendChild(itemClone)
+            // Quitar el mensaje de ayuda
+            msjAyuda.innerHTML = "";
+
         }
-    } else {
+    } else if (propiedades.length <= 0) {
         // TODO: Mostrar mensaje de ayuda al usuario
+        // Obtenemos el campo span del mensaje de usuario 
+        const msjAyuda = document.getElementById("msjAyuda");
+        msjAyuda.innerHTML = "La busqueda no obtuvo ningun resultado, intenta con una nueva busqueda o escribenos a alfred@dc.com";
+        
     }
 }
