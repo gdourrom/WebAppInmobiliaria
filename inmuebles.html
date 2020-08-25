@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -20,13 +20,18 @@
         <link rel="stylesheet" href="estilos/text.css">
         <link rel="stylesheet" href="estilos/inmuebles.css">
 
-        <title>Mi casa</title>
+        <title>Inmuebles - Web app inmuebles </title>
     </head>
     <body onload="readUrlParameters(); applyFilter()">
+        <div class="nav-sup-bar">
+            <a href="inicio-de-sesion.html">INGRESAR</a>
+            <a href="registro.html">REGISTRO</a>
+            <a href="publicacion-de-inmueble.html"><button class="btn-nav-sup-bar">PUBLICAR</button></a>
+        </div>
         <!-- Navegacion Desktop -->
         <header class="desktop-menu">
             <a href="index.html">
-                <img class="logo" src="imagenes/logo.png">
+                <img class="logo" src="imagenes/sweet-home.svg">
             </a>
 
             <nav class="desktop-menu-actions">
@@ -34,13 +39,12 @@
                 <a href="inmuebles.html">Alquiler</a>
                 <a href="inmuebles.html">Proyectos</a>
                 <a href="inmobiliarias.html">Inmobiliarias</a>
-                <a class="login-button" href="inicio-de-sesion.html">Iniciar Sesión</a>
             </nav>
         </header>
 
         <!-- Navegacion Mobile -->
         <header class="mobile-menu">
-            <img class="logo" src="imagenes/logo.png">
+            <img class="logo" src="imagenes/sweet-home.svg">
 
             <button onclick="toggleMobileMenu()">
                 <i class="fas fa-bars fa-lg"></i>
@@ -48,11 +52,11 @@
         </header>
 
         <nav class="mobile-menu-actions">
-            <a href="#">Venta</a>
-            <a href="#">Alquiler</a>
-            <a href="#">Proyectos</a>
-            <a href="#">Inmobiliarias</a>
-            <a class="login-button" href="#">Iniciar Sesión</a>
+            <a href="inmuebles.html">Venta</a>
+            <a href="inmuebles.html">Alquiler</a>
+            <a href="inmuebles.html">Proyectos</a>
+            <a href="inmobiliarias.html">Inmobiliarias</a>
+            <a class="login-button" href="inicio-de-sesion.html">Iniciar Sesión</a>
         </nav>
 
         <main class="container">
