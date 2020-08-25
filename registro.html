@@ -1,25 +1,135 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="es">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <title>Web app inmuebles</title>
-  </head>
-  <body>
-    <header></header>
+        <!-- Fontawesome -->
+        <script src="https://kit.fontawesome.com/96f039ea8c.js" crossorigin="anonymous"></script>
 
-    <main></main>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;600;900&display=swap" rel="stylesheet">
 
-    <footer></footer>
+        <!-- Custom styles -->
+        <link rel="stylesheet" href="estilos/general.css">
+        <link rel="stylesheet" href="estilos/navigation.css">
+        <link rel="stylesheet" href="estilos/text.css">
+        <link rel="stylesheet" href="estilos/registro.css">
 
-    <!-- jQuery, Popper.js, Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  </body>
+        <title>Olvido de contraseña - Web app inmuebles </title>
+    </head>
+    <body>
+      <!-- Navegacion Superior -->
+      <div class="nav-sup-bar">
+        <a href="inicio-de-sesion.html">INGRESAR</a>
+        <a href="registro.html">REGISTRO</a>
+        <a href="publicacion-de-inmueble.html"><button class="btn-nav-sup-bar">PUBLICAR</button></a>
+      </div>
+        <!-- Navegacion Desktop -->
+        <header class="desktop-menu">
+            <a href="index.html">
+                <img class="logo" src="imagenes/sweet-home.svg">
+            </a>
+
+            <nav class="desktop-menu-actions">
+                <a href="inmuebles.html">Venta</a>
+                <a href="inmuebles.html">Alquiler</a>
+                <a href="inmuebles.html">Proyectos</a>
+                <a href="inmobiliarias.html">Inmobiliarias</a>
+            </nav>
+        </header>
+
+        <!-- Navegacion Mobile -->
+        <header class="mobile-menu">
+            <img class="logo" src="imagenes/sweet-home.svg">
+
+            <button onclick="toggleMobileMenu()">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
+        </header>
+
+        <nav class="mobile-menu-actions">
+          <a href="inmuebles.html">Venta</a>
+          <a href="inmuebles.html">Alquiler</a>
+          <a href="inmuebles.html">Proyectos</a>
+          <a href="inmobiliarias.html">Inmobiliarias</a>
+          <a class="login-button" href="inicio-de-sesion.html">Iniciar Sesión</a>
+        </nav>
+
+        <main class="container">
+
+          <h1>Formulario de registro</h1>
+
+          <div class="row col-12">
+
+            <div class="col-md-6 regContainer">
+              <div class="cards">
+
+                <input type="text" name="regName" id="regName" placeholder="Ingresa tu nombre y apellido">  
+
+              </div>    
+               <span id="regErrorName"></span>
+            </div>
+            
+            <div class="col-md-6 regContainer">
+              <div class="cards">
+
+                <input type="email" name="regEmail" id="regEmail" placeholder="email@ejemplo.com">
+
+              </div> 
+              <span id="regErrorEmail"></span>   
+            </div>
+
+            <div class="col-md-12 regContainer">
+              <div class="cards">
+
+                <input type="tel" name="regTel" id="regTel" placeholder="ingresa tu número de celular o telefono">
+
+              </div> 
+              <span id="regErrorTel"></span>   
+            </div>
+
+            <div class="col-md-6 regContainer">
+              <div class="cards">
+
+                <input type="password" name="regPass" id="regPass" placeholder="Contraseña">
+
+              </div>  
+              <span id="regErrorPass"></span>  
+            </div>
+
+            <div class="col-md-6 regContainer">
+              <div class="cards">
+
+                <input type="password" name="regPassRepet" id="regPassRepet" placeholder="Repetir Contraseña">
+
+              </div>  
+              <span id="regErrorPassRepet"></span>  
+            </div>
+
+            <div class="btnContenedorReg">
+              <span id="regErrorGeneral"></span> 
+              <button onclick="validarRegistro()" class="btnRegistro">Registrarme</button>
+
+            </div>
+            
+            
+          </div>
+        </main>
+    
+        <!-- jQuery, Popper.js, Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        <!-- Custom scripts -->
+        <script src="scripts/menu.js"></script>
+        <script src="scripts/footer.js"></script>
+        <script src="scripts/registro.js"></script>
+    </body>
 </html>
