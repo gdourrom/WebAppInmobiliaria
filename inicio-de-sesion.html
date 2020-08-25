@@ -1,42 +1,50 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Web app inmuebles - Iniciar Sesión</title>
+    <title> Iniciar Sesión - Web app inmuebles </title>
     <!-- Google Font Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;600;900&display=swap" rel="stylesheet">
     <!-- CSS inicio-de-sesion -->
     <link rel="stylesheet" href="estilos/login.css">
+    <!-- iconos -->
+     <!-- Fontawesome -->
+     <script src="https://kit.fontawesome.com/96f039ea8c.js" crossorigin="anonymous"></script>
   
   </head>
   <body>
     <div class="form-container">
       <div id="form-login">
-          <h2>Ingresar al sitio</h2>
-          <input type="email" name="emaiLogin" id="emailLogin" placeholder="ejemplo@email.com">
+        <img src="imagenes/sweet-home.svg" alt="Sweet Home">
+          <input type="email" name="emaiLogin" id="emailLogin" value="" placeholder="ejemplo@email.com">
           <span id="formErrorEmail"></span>
 
 
 
-          <input type="password" name="passLogin" id="passLogin" placeholder="Contraseña">
+          <input type="password" name="passLogin" id="passLogin" value="" placeholder="Contraseña">
           <span id="formErrorPass"></span>
 
 
-
-          <button onclick="loginValidation()">Ingresar</button>
           <span id="formErrorGeneral"></span>
+          <button onclick="loginValidation()">Ingresar</button>
+         
 
-          <ul>
+          <ul class="registerAndForgot">
+            <li> <a href="registro.html">Registrarme</a></li>
+            <li> <a href="olvido-de-contrasena.html">Olvidé mi contraseña</a> </li>
+        </ul>
+          
+
+          <ul class="loginData">
               <li> Correo: brunodiaz@dc.com</li>
               <li> Contraseña: imbatman2020 </li>
-            </ul>
-                </div>
+          </ul>
 
       </div>
       
-  </div>
+    </div>
     <script src="scripts/login.js"></script>
   </body>
 </html>
