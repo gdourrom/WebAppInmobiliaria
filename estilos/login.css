@@ -6,19 +6,15 @@
     height: 95vh;
     flex-direction: column;
 }
-
+#form-login > img {
+    width: 80%;
+}
 #form-login{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 95vh;
     flex-direction: column;
-}
-
-#form-login > h2 {
-    color:rgb(80, 8, 80);
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
 }
 
 
@@ -40,8 +36,7 @@
     color: rgb(206, 0, 69);
     align-self: center;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    padding:30px 0;
+    font-weight: 300;
 
 }
 
@@ -51,7 +46,7 @@
     color: rgb(206, 0, 69);
     align-self: flex-end;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 
@@ -96,10 +91,28 @@ input:focus{
     
   }
 
-  ul > li {
+.registerAndForgot {
+    width: 95%;
+    display: flex;
+    justify-content: start;
+    padding: 0px;
+}
+.registerAndForgot > li {
+    list-style:none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    padding-right: 5px;
+   
+}
+
+.registerAndForgot > li > a {
+    color: rgb(29, 92, 185);
+    text-decoration: none;
+}
+ .loginData > li {
     list-style: none;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
     font-size: 13px;
   
 }

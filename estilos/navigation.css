@@ -1,10 +1,14 @@
 .desktop-menu,
 .mobile-menu {
-    background-color: #798f67;
+    background-color: white;
     position: fixed;
     width: 100%;
-    top: 0;
+    height: 80px;
+    padding-right: 90px;
+    padding-left: 90px;
     z-index: 10;
+    margin-top: 40px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 /* Menu desktop */
@@ -20,24 +24,22 @@
 }
 
 .desktop-menu > nav > a {
-    border: 3px solid #6b7562;
-    border-radius: 4px;
-    background-color: #707d65;
     padding: 7px;
     margin-left: 6px;
     transition: background-color ease .3s;
+    height: 100%;
+    padding-top: 28px;
 }
 
 .desktop-menu > nav > a:hover {
-    background-color: #78846e;
+    color:white;
+    background-color: #673AB7;
+    height: 100%;
+    padding-top: 28px;
     transition: background-color ease .3s;
 }
 
-.desktop-menu > nav > a.login-button {
-    margin-left: 14px;
-    background-color: #fff;
-    color: #798f67;
-}
+
 
 .desktop-menu-actions {
     display: flex;
@@ -52,9 +54,10 @@
 
 .mobile-menu > button {
     padding: 20px;
-    color: #fff;
+    color: #673AB7;
     border: none;
-    background: #8b9a7e;
+    background:white;
+    
 }
 
 .mobile-menu > button:focus {
@@ -67,13 +70,14 @@
 
 .mobile-menu-actions > a {
     padding: 15px;
-    background-color: #8b9a7e;
+    background-color: white;
     transition: background-color ease .4s;
-    border-bottom: 1px solid #798f67;
+    border-bottom: 1px solid #bca3e7;
 }
 
 .mobile-menu-actions > a:hover {
-    background-color: #97a58a;
+    background-color: #673AB7;
+    color: white;
     transition: background-color ease .3s;
 }
 
@@ -85,6 +89,8 @@
     .mobile-menu {
         display: flex;
         justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 20px;;
     }
 
     .mobile-menu-actions.opened {
@@ -93,5 +99,68 @@
         position: fixed;
         width: 100%;
         z-index: 10;
+        margin-top:120px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+
+    
+}
+
+/*BARRA SUPERIOR*/
+.nav-sup-bar{
+    width:100%;
+    height: 40px;
+    position: fixed;
+    z-index: 10;
+    background-color: #673AB7;
+    padding: 5px 90px;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+}
+
+.nav-sup-bar a {
+    text-decoration: none;
+    color:white;
+    padding:0px 10px;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.nav-sup-bar a:hover {
+    text-decoration: none;
+    color:#4CAF50;
+}
+
+.btn-nav-sup-bar{
+    color:white;
+    background-color:#4CAF50;
+    border-radius: 3px;
+    border:none;
+    font-weight: 400;
+    padding:2px 10px;
+}
+
+
+.btn-nav-sup-bar:hover{
+    color:#4CAF50;
+    background-color:white;
+    border-radius: 3px;
+    border:none;
+    font-weight: 400;
+    padding:2px 10px;
+}
+
+@media (max-width: 400px){
+    /* Barra superior menu */
+    .nav-sup-bar{
+        padding:10px 5px;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+    
+    .nav-sup-bar a {
+        padding: 0px 5px;
     }
 }

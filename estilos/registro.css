@@ -1,0 +1,57 @@
+.container {
+    padding-top:150px;
+}
+.regContainer{
+    padding:10px;
+}
+
+
+.btnContenedorReg{
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btnRegistro{
+    width: 200px;
+    color: white;
+    border: 1px solid #673AB7;
+    background-color: #673AB7;
+    border-radius: 3px;
+    padding:10px 0px;
+}
+.btnRegistro:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,0.19), 0 4px 4px rgba(0,0,0,0.23);
+}
+
+
+#regErrorGeneral{
+    color:red;
+    font-size: 16px;
+
+}
+
+input {
+    margin:5px 0 10px 0;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    width: 90%;
+    height: 40px;
+}
+input[type=email], input[type=password], [type=text], [type=tel] {
+    padding:5px;
+    border-top: none;
+    border-left:none;
+    border-right: none;
+    border-bottom: 1px solid rgb(80, 8, 80);;
+}
+
+input:focus{
+    border-top: none;
+    border-left:none;
+    border-right: none;
+    outline-color: rgba(255, 255, 255, 0);
+
+} 

@@ -3,12 +3,12 @@
 }
 
 .desktop-menu > nav > a {
-    color: #fff;
+    color:#673AB7;
     text-decoration: none;
 }
 
 .mobile-menu-actions > a {
-    color: #fff;
+    color: #673AB7;
     font-size: 1.1rem;
     text-decoration: none;
 }
