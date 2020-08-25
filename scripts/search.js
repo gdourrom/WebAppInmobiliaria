@@ -160,6 +160,7 @@ function getDataFromAPI(filtros) {
             const propiedadEnConstruccion = filtros.estado.enConstruccion ? propiedad.estado.enConstruccion : true
             const porpiedadUsada = filtros.estado.usada ? propiedad.estado.usada : true
             const propiedadAEstrenar = filtros.estado.aEstrenar ? propiedad.estado.aEstrenar : true
+           
             // Resultado del filtro
             return laOperacionCoincide && mostrarCasas && mostrarApartamentos && conGaraje && tieneSeguridad && tieneJardin && tieneCalefaccion && tienePiscina && estaAmueblado && propiedadAEstrenar && porpiedadUsada && propiedadEnConstruccion
         }
@@ -251,6 +252,7 @@ function applyFilter() {
 
             // Agregamos el elemento clonado como hijo del contenedor de cards
             container.appendChild(itemClone)
+
             // Quitar el mensaje de ayuda
             msjAyuda.innerHTML = "";
 
