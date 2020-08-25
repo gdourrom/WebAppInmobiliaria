@@ -196,7 +196,8 @@ function applyFilter() {
             jardin: document.querySelector('#amenityJardin').checked,
             seguridad: document.querySelector('#amenitySeguridad').checked,
             piscina: document.querySelector('#amenityPiscina').checked,
-            amueblado: document.querySelector('#amenityAmueblado').checked
+            amueblado: document.querySelector('#amenityAmueblado').checked,
+            calefaccion: document.querySelector('#amenityCalefaccion').checked
         }
     }
 
