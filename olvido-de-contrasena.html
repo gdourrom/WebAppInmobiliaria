@@ -17,44 +17,36 @@
 
         <!-- Custom styles -->
         <link rel="stylesheet" href="estilos/general.css">
-        <link rel="stylesheet" href="estilos/navigation.css">
         <link rel="stylesheet" href="estilos/text.css">
+        <link rel="stylesheet" href="estilos/olvidoPass.css">
 
         <title>Olvido de contraseña - Web app inmuebles </title>
     </head>
     <body>
-        <!-- Navegacion Desktop -->
-        <header class="desktop-menu">
-            <a href="index.html">
-                <img class="logo" src="imagenes/logo.png">
-            </a>
+       
+        <div class="form-container">
+            <div id="form-olvido-pass">
+               <h2>Recuperar Contraseña</h2>
+                <input type="email" name="emailOlvidoPass" id="emailOlvidoPass" value="" placeholder="ejemplo@email.com">
+                <span id="formErrorEmail"></span>
 
-            <nav class="desktop-menu-actions">
-                <a href="inmuebles.html">Venta</a>
-                <a href="inmuebles.html">Alquiler</a>
-                <a href="inmuebles.html">Proyectos</a>
-                <a href="inmobiliarias.html">Inmobiliarias</a>
-                <a class="login-button" href="inicio-de-sesion.html">Iniciar Sesión</a>
-            </nav>
-        </header>
-
-        <!-- Navegacion Mobile -->
-        <header class="mobile-menu">
-            <img class="logo" src="imagenes/logo.png">
-
-            <button onclick="toggleMobileMenu()">
-                <i class="fas fa-bars fa-lg"></i>
-            </button>
-        </header>
-
-        <nav class="mobile-menu-actions">
-            <a href="#">Venta</a>
-            <a href="#">Alquiler</a>
-            <a href="#">Proyectos</a>
-            <a href="#">Inmobiliarias</a>
-            <a class="login-button" href="#">Iniciar Sesión</a>
-        </nav>
-
+                <button onclick="validarEmail()">Enviar</button>
+               
+      
+                <ul class="registerAndForgot">
+                  <li> <a href="inicio-de-sesion.html">Iniciar Sesión</a> </li>
+                  <li> <a href="registro.html">Registrarme</a></li>
+                  
+              </ul>
+                
+      
+                <ul class="loginData">
+                    <li> Correo: brunodiaz@dc.com</li>
+                </ul>
+      
+            </div>
+            
+          </div>
     
         <!-- jQuery, Popper.js, Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -64,5 +56,6 @@
         <!-- Custom scripts -->
         <script src="scripts/menu.js"></script>
         <script src="scripts/footer.js"></script>
+        <script src="scripts/olvidoPass.js"></script>
     </body>
 </html>
