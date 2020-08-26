@@ -1,0 +1,135 @@
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    flex-direction: column;
+}
+#form-olvido-pass > img {
+    width: 80%;
+}
+#form-olvido-pass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:400px;
+    height: auto;
+    background-color: white;
+    padding:30px 15px;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+
+
+#form-olvido-pass:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+#formErrorGeneral {
+    font-size: 14px;
+    color: rgb(206, 0, 69);
+    align-self: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+
+}
+
+
+#formErrorPass, #formErrorEmail {
+    font-size: 10px;
+    color: rgb(206, 0, 69);
+    align-self: flex-end;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+
+input {
+    margin:10px 0 10px 0;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    width: 90%;
+    height: 50px;
+}
+input[type=email], input[type=password] {
+    padding:5px;
+    border-top: none;
+    border-left:none;
+    border-right: none;
+    border-bottom: 1px solid rgb(80, 8, 80);
+}
+
+input:focus{
+    border-top: none;
+    border-left:none;
+    border-right: none;
+    outline-color: rgba(255, 255, 255, 0);
+
+}   
+
+#form-olvido-pass > button {
+    background-color:#673AB7;
+    color: white;
+    width: 95%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  }
+
+  #form-olvido-pass > button:hover {
+    background-color:#573199;
+    
+  }
+
+.registerAndForgot {
+    width: 95%;
+    display: flex;
+    justify-content: start;
+    padding: 0px;
+}
+.registerAndForgot > li {
+    list-style:none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    padding-right: 5px;
+   
+}
+
+.registerAndForgot > li > a {
+    color: rgb(29, 92, 185);
+    text-decoration: none;
+}
+
+.registerAndForgot > li > a:hover {
+    color: rgb(79, 125, 192);
+    text-decoration: none;
+}
+
+.loginData {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    padding:0;
+    margin:0;
+}
+
+ .loginData > li {
+    list-style: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+  
+}
+
+@media (max-width: 400px) { 
+    #form-olvido-pass {
+        width:90%;  
+    }
+ }
