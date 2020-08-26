@@ -90,6 +90,48 @@ function getDataFromAPI(filtros) {
         },
         {
             operacion: 'Alquiler',
+            tipoDePropiedad: 'Casa',
+            estado: {
+                enConstruccion: false,
+                usada: false,
+                aEstrenar: true
+            },
+            precio: {
+                monto: 25000,
+                divisa: 'UYU'
+            },
+            metraje: {
+                total: 300,
+                edificado: 230
+            },
+            habitaciones: {
+                dormitorios: 4,
+                banos: 2
+            },
+            descripcion: 'Hermosa casa ubicada a pocas cuadras del mar',
+            imagenes: [
+                'imagenes/inmuebles/casa-1.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor.png',
+                'imagenes/inmuebles/casa-pocitos-3.jpg',
+            ],
+            ubicacion: {
+                departamento: 'Montevideo',
+                barrio: 'Pocitos',
+                codigoPostal: '11200'
+            },
+            referencia: '003',
+            amenities: {
+                garaje: true,
+                jardin: true,
+                calefaccion: true,
+                amueblado: true,
+                seguridad: true,
+                piscina: true
+            }
+        },
+        // Apartamento en Parque Batlle 4
+        {
+            operacion: 'Alquiler',
             tipoDePropiedad: 'Apartamento',
             estado: {
                 enConstruccion: false,
@@ -117,7 +159,7 @@ function getDataFromAPI(filtros) {
                 barrio: 'Parque Batlle',
                 codigoPostal: '11200'
             },
-            referencia: '003',
+            referencia: '004',
             amenities: {
                 garaje: true,
                 jardin: false,
@@ -127,6 +169,7 @@ function getDataFromAPI(filtros) {
                 piscina: false
             }
         }
+
     ]
 
     // Esto realmente lo hace el API
