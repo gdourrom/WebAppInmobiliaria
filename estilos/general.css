@@ -8,7 +8,8 @@ body > main {
 }
 
 hr {
-    border: 2px solid #798f67;
+    border:0;
+    border-top: 1px solid #b19cd4;
     border-radius: 2px;
 }
 
