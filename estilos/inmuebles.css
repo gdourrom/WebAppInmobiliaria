@@ -2,26 +2,60 @@
 .search-result {
     margin-top: 40px;
     margin-bottom: 40px;
+    
 }
 
-.filters,
-.search-result > h4 {
-    background-color: #e6ebdc;
-    border-radius: 4px;
-    padding: 15px;
+.filters {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    background-color: white;
+    height: auto;
+    padding:10px 10px;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    
+}
+
+.filters > h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #673AB7;
+
+    
+}
+
+.search-result > h4{
+    color:#673AB7;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    background-color: white;
+    height: auto;
+    padding:10px 10px;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    
 }
 
 .filters > p {
-    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
 }
-
+.filtros > label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+}
 .filters > button {
-    background-color: #bf7754;
-    border: 3px solid #9e694e;
+    font-family: 'Roboto', sans-serif;
+    background-color: #4CAF50;
+    border: 3px solid #4CAF50;
     color: white;
     border-radius: 4px;
     width: 100%;
     padding: 4px;
+}
+
+.filters > button:hover {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .filters > button:focus {
@@ -33,22 +67,40 @@
 }
 
 .item-card {
-    padding: 0;
-    border: 3px solid #798f67;
-    border-radius: 4px;
+    background-color: white;
+    height: max-content;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+
+.item-card > .item-details > .item-title {
+    height: 50px;
+}
+.item-card:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,0.19), 0 4px 4px rgba(0,0,0,0.23);
 }
 
 .item-details {
     padding: 10px;
 }
 
-.item-price {
-    font-weight: bold;
-    color: #bf7754;
-}
+
 
 .item-images img {
-    border-radius: 1px 1px 0 0;
+    border-radius: 3px 3px 0 0;
+    max-height: 250px;
+    background-size:cover;
+}
+
+.dormitorios-list{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 
 @media (max-width: 575px) {
