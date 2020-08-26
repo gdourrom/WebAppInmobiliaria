@@ -28,17 +28,7 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
-#formErrorGeneral {
-    font-size: 14px;
-    color: rgb(206, 0, 69);
-    align-self: center;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-
-}
-
-
-#formErrorPass, #formErrorEmail {
+#formErrorEmail {
     font-size: 10px;
     color: rgb(206, 0, 69);
     align-self: flex-end;
@@ -99,7 +89,7 @@ input:focus{
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     font-size: 12px;
-    padding-right: 5px;
+    padding: 10px 10px 10px 0 ;
    
 }
 
