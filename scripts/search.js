@@ -878,8 +878,17 @@ function getDataFromAPI(filtros) {
             const porpiedadUsada = filtros.estado.usada ? propiedad.estado.usada : true
             const propiedadAEstrenar = filtros.estado.aEstrenar ? propiedad.estado.aEstrenar : true
            
+
+            // Dormitorios
+            const tieneUnDormitorio = filtros.habitaciones.dormitorios ? propiedad.habitaciones.dormitorios === 1 : true
+            const tieneDosDormitorios = filtros.habitaciones.dormitorios ? propiedad.habitaciones.dormitorios === 2 : true
+            const tieneTresDormitorios = filtros.habitaciones.dormitorios ? propiedad.habitaciones.dormitorios === 3 : true
+            const tieneCuatroDormitorios = filtros.habitaciones.dormitorios ? propiedad.habitaciones.dormitorios === 4 : true
+            const tieneCincoMasDormitorios = filtros.habitaciones.dormitorios ? propiedad.habitaciones.dormitorios >= 5 : true
+
+
             // Resultado del filtro
-            return laOperacionCoincide && mostrarCasas && mostrarApartamentos && conGaraje && tieneSeguridad && tieneJardin && tieneCalefaccion && tienePiscina && estaAmueblado && propiedadAEstrenar && porpiedadUsada && propiedadEnConstruccion
+            return laOperacionCoincide && mostrarCasas && mostrarApartamentos && conGaraje && tieneSeguridad && tieneJardin && tieneCalefaccion && tienePiscina && estaAmueblado && propiedadAEstrenar && porpiedadUsada && propiedadEnConstruccion && tieneUnDormitorio && tieneDosDormitorios && tieneTresDormitorios && tieneCuatroDormitorios && tieneCincoMasDormitorios
         }
     )
 
@@ -914,8 +923,15 @@ function applyFilter() {
             seguridad: document.querySelector('#amenitySeguridad').checked,
             piscina: document.querySelector('#amenityPiscina').checked,
             amueblado: document.querySelector('#amenityAmueblado').checked,
-            calefaccion: document.querySelector('#amenityCalefaccion').checked
-        }
+            calefaccion: document.querySelector('#amenityCalefaccion').checked,
+        },
+        dormitorios: {
+            unDormitorio: document.querySelector('#cantidadDormitorios1').checked,
+            dosDormitorios: document.querySelector('#cantidadDormitorios2').checked,
+            tresDormitorios: document.querySelector('#cantidadDormitorios3').checked,
+            cuatroDormitorios: document.querySelector('#cantidadDormitorios4').checked,
+            cincoMasDormitorios: document.querySelector('#cantidadDormitorios5mas').checked
+        },
     }
 
     // Obtenemos la lista de propiedades a mostrar
