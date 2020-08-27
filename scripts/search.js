@@ -9,6 +9,7 @@ function getDataFromAPI(filtros) {
     // De momento vamos a retornar datos "quemados", luego deben venir del servidor
 
     const propiedades = [
+        // Venta Casa Reducto
         {
             operacion: 'Venta',
             tipoDePropiedad: 'Casa',
@@ -29,17 +30,22 @@ function getDataFromAPI(filtros) {
                 dormitorios: 2,
                 banos: 1
             },
-            descripcion: '',
+            descripcion: 'Hermosa casa en Reducto',
             imagenes: [
-                'imagenes/inmuebles/inmueble-1-img-1.jpg',
-                'imagenes/inmuebles/inmueble-1-img-2.jpg'
+                'imagenes/inmuebles/casa-1.jpg',
+                'imagenes/inmuebles/apartamento-cocina-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-1.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-3.jpg',
             ],
             ubicacion: {
-                departamento: '',
+                departamento: 'Montevideo',
                 barrio: 'Reducto',
-                codigoPostal: ''
+                codigoPostal: '11100'
             },
-            referencia: '',
+            referencia: '001',
             amenities: {
                 garaje: true,
                 jardin: true,
@@ -49,6 +55,99 @@ function getDataFromAPI(filtros) {
                 piscina: true
             }
         },
+         // Venta Apartamento Reducto
+         {
+            operacion: 'Venta',
+            tipoDePropiedad: 'Apartamento',
+            estado: {
+                enConstruccion: true,
+                usada: false,
+                aEstrenar: false
+            },
+            precio: {
+                monto: 105322,
+                divisa: 'USD'
+            },
+            metraje: {
+                total: 120,
+                edificado: 110
+            },
+            habitaciones: {
+                dormitorios: 2,
+                banos: 1
+            },
+            descripcion: 'Hermosa casa en Reducto',
+            imagenes: [
+                'imagenes/inmuebles/apartamento-1.jpg',
+                'imagenes/inmuebles/apartamento-cocina-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-1.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-3.jpg',
+            ],
+            ubicacion: {
+                departamento: 'Montevideo',
+                barrio: 'Reducto',
+                codigoPostal: '11100'
+            },
+            referencia: '002',
+            amenities: {
+                garaje: true,
+                jardin: true,
+                calefaccion: false,
+                amueblado: false,
+                seguridad: true,
+                piscina: true
+            }
+        },
+        // Venta Casa en Malvin 3 dormitorios y 4 baños
+        {
+            operacion: 'Venta',
+            tipoDePropiedad: 'Casa',
+            estado: {
+                enConstruccion: false,
+                usada: true,
+                aEstrenar: false
+            },
+            precio: {
+                monto: 230000,
+                divisa: 'USD'
+            },
+            metraje: {
+                total: 120,
+                edificado: 110
+            },
+            habitaciones: {
+                dormitorios: 4,
+                banos: 3
+            },
+            descripcion: 'Espectacular apartamento a mts de la rambla',
+            imagenes: [
+                'imagenes/inmuebles/casa-4.jpg',
+                'imagenes/inmuebles/apartamento-cocina-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-1.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-3.jpg',
+            ],
+            ubicacion: {
+                departamento: 'Montevideo',
+                barrio: 'Malvin',
+                codigoPostal: '11200'
+            },
+            referencia: '003',
+            amenities: {
+                garaje: true,
+                jardin: false,
+                calefaccion: true,
+                amueblado: true,
+                seguridad: true,
+                piscina: false
+            }
+        },
+        // Venta Apartamento en Malvin 3 dormitorios y 4 baños
         {
             operacion: 'Venta',
             tipoDePropiedad: 'Apartamento',
@@ -58,38 +157,137 @@ function getDataFromAPI(filtros) {
                 aEstrenar: true
             },
             precio: {
-                monto: 210000,
+                monto: 175000,
                 divisa: 'USD'
             },
             metraje: {
-                total: 100,
-                edificado: 200
+                total: 120,
+                edificado: 110
             },
             habitaciones: {
                 dormitorios: 3,
                 banos: 2
             },
-            descripcion: '',
+            descripcion: 'Espectacular apartamento a mts de la rambla',
             imagenes: [
-                'imagenes/inmuebles/inmueble-2-img-1.jpg',
+                'imagenes/inmuebles/apartamento-2.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-2.jpg',
+                'imagenes/inmuebles/apartamento-cocina-1.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-1.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-3.jpg',
             ],
             ubicacion: {
-                departamento: '',
+                departamento: 'Montevideo',
                 barrio: 'Malvin',
-                codigoPostal: ''
+                codigoPostal: '11200'
             },
-            referencia: '',
+            referencia: '004',
             amenities: {
-                garaje: false,
-                jardin: true,
+                garaje: true,
+                jardin: false,
+                calefaccion: true,
+                amueblado: false,
+                seguridad: true,
+                piscina: false
+            }
+        },
+         // Venta Casa en Tres Cruces 2 dormitorios y 1 baños
+        {
+            operacion: 'Venta',
+            tipoDePropiedad: 'Casa',
+            estado: {
+                enConstruccion: false,
+                usada: true,
+                aEstrenar: false
+            },
+            precio: {
+                monto: 170000,
+                divisa: 'USD'
+            },
+            metraje: {
+                total: 100,
+                edificado: 80
+            },
+            habitaciones: {
+                dormitorios: 2,
+                banos: 1
+            },
+            descripcion: 'Espectacular apartamento a mts de la rambla',
+            imagenes: [
+                'imagenes/inmuebles/casa-1.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-1.jpg',
+                'imagenes/inmuebles/apartamento-cocina-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-3.jpg',
+            ],
+            ubicacion: {
+                departamento: 'Montevideo',
+                barrio: 'Tres Cruces',
+                codigoPostal: '11200'
+            },
+            referencia: '005',
+            amenities: {
+                garaje: true,
+                jardin: false,
                 calefaccion: true,
                 amueblado: true,
                 seguridad: true,
                 piscina: false
             }
         },
+         // Venta Apartamento en Tres Cruces 2 dormitorios y 1 baños
+         {
+            operacion: 'Venta',
+            tipoDePropiedad: 'Apartamento',
+            estado: {
+                enConstruccion: false,
+                usada: true,
+                aEstrenar: false
+            },
+            precio: {
+                monto: 180000,
+                divisa: 'USD'
+            },
+            metraje: {
+                total: 60,
+                edificado: 60
+            },
+            habitaciones: {
+                dormitorios: 3,
+                banos: 1
+            },
+            descripcion: 'Espectacular apartamento a mts de la rambla',
+            imagenes: [
+                'imagenes/inmuebles/apartamento-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-3.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-1.jpg',
+                'imagenes/inmuebles/apartamento-cocina-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-2.jpg',
+            ],
+            ubicacion: {
+                departamento: 'Montevideo',
+                barrio: 'Tres Cruces',
+                codigoPostal: '11200'
+            },
+            referencia: '006',
+            amenities: {
+                garaje: true,
+                jardin: false,
+                calefaccion: true,
+                amueblado: false,
+                seguridad: false,
+                piscina: true
+            }
+        },
+        // Venta Casa en Cordon 1 dormitorios y 1 baños
         {
-            operacion: 'Alquiler',
+            operacion: 'Venta',
             tipoDePropiedad: 'Casa',
             estado: {
                 enConstruccion: false,
@@ -97,39 +295,181 @@ function getDataFromAPI(filtros) {
                 aEstrenar: true
             },
             precio: {
-                monto: 25000,
+                monto: 145000,
+                divisa: 'USD'
+            },
+            metraje: {
+                total: 80,
+                edificado: 70
+            },
+            habitaciones: {
+                dormitorios: 1,
+                banos: 1
+            },
+            descripcion: 'Espectacular apartamento a mts de la rambla',
+            imagenes: [
+                'imagenes/inmuebles/casa-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-1.jpg',
+                'imagenes/inmuebles/apartamento-cocina-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-3.jpg',
+            ],
+            ubicacion: {
+                departamento: 'Montevideo',
+                barrio: 'Cordon',
+                codigoPostal: '11200'
+            },
+            referencia: '007',
+            amenities: {
+                garaje: false,
+                jardin: false,
+                calefaccion: true,
+                amueblado: false,
+                seguridad: false,
+                piscina: false
+            }
+        },
+        // Venta Apartamento en Cordon 1 dormitorios y 1 baños
+        {
+            operacion: 'Venta',
+            tipoDePropiedad: 'Apartamento',
+            estado: {
+                enConstruccion: false,
+                usada: true,
+                aEstrenar: false
+            },
+            precio: {
+                monto: 230000,
+                divisa: 'USD'
+            },
+            metraje: {
+                total: 200,
+                edificado: 160
+            },
+            habitaciones: {
+                dormitorios:3,
+                banos: 1
+            },
+            descripcion: 'Espectacular apartamento a mts de la rambla',
+            imagenes: [
+                'imagenes/inmuebles/apartamento-1.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-1.jpg',
+                'imagenes/inmuebles/apartamento-cocina-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-3.jpg',
+            ],
+            ubicacion: {
+                departamento: 'Montevideo',
+                barrio: 'Cordon',
+                codigoPostal: '11200'
+            },
+            referencia: '008',
+            amenities: {
+                garaje: true,
+                jardin: false,
+                calefaccion: false,
+                amueblado: false,
+                seguridad: true,
+                piscina: false
+            }
+        },
+        // Alquiler de Apartamento en Pocitos alquiler
+        {
+            operacion: 'Alquiler',
+            tipoDePropiedad: 'Apartamento',
+            estado: {
+                enConstruccion: false,
+                usada: false,
+                aEstrenar: true
+            },
+            precio: {
+                monto: 14500,
                 divisa: 'UYU'
             },
             metraje: {
-                total: 300,
-                edificado: 230
+                total: 120,
+                edificado: 110
             },
             habitaciones: {
-                dormitorios: 4,
+                dormitorios: 2,
                 banos: 2
             },
-            descripcion: 'Hermosa casa ubicada a pocas cuadras del mar',
+            descripcion: 'Espectacular apartamento a mts de la rambla',
             imagenes: [
-                'imagenes/inmuebles/casa-1.jpg',
-                'imagenes/inmuebles/apartamento-living-comedor.png',
-                'imagenes/inmuebles/casa-pocitos-3.jpg',
+                'imagenes/inmuebles/apartamento-1.jpg',
+                'imagenes/inmuebles/apartamento-cocina-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-1.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-3.jpg',
             ],
             ubicacion: {
                 departamento: 'Montevideo',
                 barrio: 'Pocitos',
                 codigoPostal: '11200'
             },
-            referencia: '003',
+            referencia: '009',
+            amenities: {
+                garaje: true,
+                jardin: false,
+                calefaccion: true,
+                amueblado: false,
+                seguridad: true,
+                piscina: false
+            }
+        },
+        // Alquiler de Casa en Pocitos alquiler
+        {
+            operacion: 'Alquiler',
+            tipoDePropiedad: 'Casa',
+            estado: {
+                enConstruccion: false,
+                usada: true,
+                aEstrenar: false
+            },
+            precio: {
+                monto: 200000,
+                divisa: 'UYU'
+            },
+            metraje: {
+                total: 120,
+                edificado: 110
+            },
+            habitaciones: {
+                dormitorios: 4,
+                banos: 2
+            },
+            descripcion: 'Espectacular apartamento a mts de la rambla',
+            imagenes: [
+                'imagenes/inmuebles/apartamento-1.jpg',
+                'imagenes/inmuebles/apartamento-cocina-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-1.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-3.jpg',
+            ],
+            ubicacion: {
+                departamento: 'Montevideo',
+                barrio: 'Pocitos',
+                codigoPostal: '11200'
+            },
+            referencia: '010',
             amenities: {
                 garaje: true,
                 jardin: true,
-                calefaccion: true,
-                amueblado: true,
+                calefaccion: false,
+                amueblado: false,
                 seguridad: true,
-                piscina: true
+                piscina: false
             }
         },
-        // Apartamento en Parque Batlle 4
+        // Alquiler de Apartamento en Parque Batlle 6 dormitorios 6 baños
         {
             operacion: 'Alquiler',
             tipoDePropiedad: 'Apartamento',
@@ -139,27 +479,361 @@ function getDataFromAPI(filtros) {
                 aEstrenar: false
             },
             precio: {
-                monto: 21000,
+                monto: 45500,
                 divisa: 'UYU'
             },
             metraje: {
-                total: 150,
-                edificado: 150
+                total: 300,
+                edificado: 210
+            },
+            habitaciones: {
+                dormitorios: 6,
+                banos: 6
+            },
+            descripcion: 'Espectacular apartamento a mts de la rambla',
+            imagenes: [
+                'imagenes/inmuebles/apartamento-2.jpg',
+                'imagenes/inmuebles/apartamento-piscina.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-1.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-3.jpg',
+                'imagenes/inmuebles/apartamento-cocina-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-2.jpg',
+            ],
+            ubicacion: {
+                departamento: 'Montevideo',
+                barrio: 'Carrasco',
+                codigoPostal: '11800'
+            },
+            referencia: '011',
+            amenities: {
+                garaje: true,
+                jardin: true,
+                calefaccion: true,
+                amueblado: true,
+                seguridad: true,
+                piscina: true
+            }
+        },
+        // Alquiler de Casa en Parque Batlle 3 dormitorios 2 baños
+        {
+            operacion: 'Alquiler',
+            tipoDePropiedad: 'Casa',
+            estado: {
+                enConstruccion: false,
+                usada: true,
+                aEstrenar: false
+            },
+            precio: {
+                monto: 45233,
+                divisa: 'UYU'
+            },
+            metraje: {
+                total: 200,
+                edificado: 120
+            },
+            habitaciones: {
+                dormitorios: 3,
+                banos: 2
+            },
+            descripcion: 'Espectacular apartamento a mts de la rambla',
+            imagenes: [
+                'imagenes/inmuebles/apartamento-2.jpg',
+                'imagenes/inmuebles/apartamento-piscina.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-1.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-3.jpg',
+                'imagenes/inmuebles/apartamento-cocina-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-2.jpg',
+            ],
+            ubicacion: {
+                departamento: 'Montevideo',
+                barrio: 'Carrasco',
+                codigoPostal: '11800'
+            },
+            referencia: '012',
+            amenities: {
+                garaje: true,
+                jardin: false,
+                calefaccion: true,
+                amueblado: false,
+                seguridad: true,
+                piscina: true
+            }
+        },
+        // Alquiler de Apartamento en Colon 2 dormitorios 1 baños
+        {
+            operacion: 'Alquiler',
+            tipoDePropiedad: 'Apartamento',
+            estado: {
+                enConstruccion: false,
+                usada: false,
+                aEstrenar: true
+            },
+            precio: {
+                monto: 12500,
+                divisa: 'UYU'
+            },
+            metraje: {
+                total: 100,
+                edificado: 100
             },
             habitaciones: {
                 dormitorios: 2,
                 banos: 1
             },
-            descripcion: '',
+            descripcion: 'Espectacular apartamento a mts de la rambla',
             imagenes: [
-                'imagenes/inmuebles/inmueble-2-img-1.jpg',
+                'imagenes/inmuebles/apartamento-1.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-1.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-3.jpg',
+                'imagenes/inmuebles/apartamento-piscina.jpg',
+                'imagenes/inmuebles/apartamento-cocina-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-2.jpg',
             ],
             ubicacion: {
                 departamento: 'Montevideo',
-                barrio: 'Parque Batlle',
-                codigoPostal: '11200'
+                barrio: 'Colon',
+                codigoPostal: '10200'
             },
-            referencia: '004',
+            referencia: '007',
+            amenities: {
+                garaje: false,
+                jardin: false,
+                calefaccion: true,
+                amueblado: false,
+                seguridad: true,
+                piscina: false
+            }
+        },
+        // Alquiler temporal Casa Carrasco
+        {
+            operacion: 'AlquilerTemporal',
+            tipoDePropiedad: 'Casa',
+            estado: {
+                enConstruccion: false,
+                usada: true,
+                aEstrenar: false
+            },
+            precio: {
+                monto: 8000,
+                divisa: 'USD'
+            },
+            metraje: {
+                total: 800,
+                edificado: 500
+            },
+            habitaciones: {
+                dormitorios: 6,
+                banos: 6
+            },
+            descripcion: 'Espectacular apartamento a mts de la rambla',
+            imagenes: [
+                'imagenes/inmuebles/casa-2.jpg',
+                'imagenes/inmuebles/apartamento-cocina-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-1.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-3.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-1.jpg',
+                'imagenes/inmuebles/apartamento-piscina.jpg',
+            ],
+            ubicacion: {
+                departamento: 'Montevideo',
+                barrio: 'Carrasco',
+                codigoPostal: '11800'
+            },
+            referencia: '013',
+            amenities: {
+                garaje: true,
+                jardin: true,
+                calefaccion: true,
+                amueblado: true,
+                seguridad: true,
+                piscina: true
+            }
+        },
+        // Alquiler Temporal Apartamento Carrasco 1 dormitorio 1 baño
+        {
+            operacion: 'AlquilerTemporal',
+            tipoDePropiedad: 'Apartamento',
+            estado: {
+                enConstruccion: false,
+                usada: true,
+                aEstrenar: false
+            },
+            precio: {
+                monto: 1000,
+                divisa: 'USD'
+            },
+            metraje: {
+                total: 200,
+                edificado: 100
+            },
+            habitaciones: {
+                dormitorios: 1,
+                banos: 1
+            },
+            descripcion: 'Espectacular apartamento a mts de la rambla',
+            imagenes: [
+                'imagenes/inmuebles/apartamento-1.jpg',
+                'imagenes/inmuebles/apartamento-cocina-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-1.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-3.jpg',
+            ],
+            ubicacion: {
+                departamento: 'Montevideo',
+                barrio: 'Carrasco',
+                codigoPostal: '11800'
+            },
+            referencia: '014',
+            amenities: {
+                garaje: true,
+                jardin: false,
+                calefaccion: true,
+                amueblado: true,
+                seguridad: false,
+                piscina: false
+            }
+        },
+        // Alquiler Temporal Casa Parque Rodo
+        {
+            operacion: 'AlquilerTemporal',
+            tipoDePropiedad: 'Casa',
+            estado: {
+                enConstruccion: false,
+                usada: true,
+                aEstrenar: false
+            },
+            precio: {
+                monto: 900,
+                divisa: 'USD'
+            },
+            metraje: {
+                total: 150,
+                edificado: 120
+            },
+            habitaciones: {
+                dormitorios: 5,
+                banos: 2
+            },
+            descripcion: 'Espectacular apartamento a mts de la rambla',
+            imagenes: [
+                'imagenes/inmuebles/casa-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-2.jpg',
+                'imagenes/inmuebles/apartamento-cocina-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-1.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-1.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-3.jpg',
+            ],
+            ubicacion: {
+                departamento: 'Montevideo',
+                barrio: 'Parque Rodo',
+                codigoPostal: '11500'
+            },
+            referencia: '007',
+            amenities: {
+                garaje: true,
+                jardin: true,
+                calefaccion: false,
+                amueblado: true,
+                seguridad: true,
+                piscina: false
+            }
+        },
+        // Alquiler Temporal Tres Cruces
+        {
+            operacion: 'AlquilerTemporal',
+            tipoDePropiedad: 'Apartamento',
+            estado: {
+                enConstruccion: false,
+                usada: true,
+                aEstrenar: false
+            },
+            precio: {
+                monto: 300,
+                divisa: 'USD'
+            },
+            metraje: {
+                total: 90,
+                edificado: 90
+            },
+            habitaciones: {
+                dormitorios: 1,
+                banos: 1
+            },
+            descripcion: 'Espectacular apartamento a mts de la rambla',
+            imagenes: [
+                'imagenes/inmuebles/apartamento-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-3.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-2.jpg',
+                'imagenes/inmuebles/apartamento-cocina-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-1.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-1.jpg',
+               
+            ],
+            ubicacion: {
+                departamento: 'Montevideo',
+                barrio: 'Tres Cruces',
+                codigoPostal: '11100'
+            },
+            referencia: '008',
+            amenities: {
+                garaje: true,
+                jardin: true,
+                calefaccion: false,
+                amueblado: true,
+                seguridad: true,
+                piscina: false
+            }
+        },
+        // VentaEn Construccion Tres Cruces
+        {
+            operacion: 'Venta',
+            tipoDePropiedad: 'Apartamento',
+            estado: {
+                enConstruccion: true,
+                usada: false,
+                aEstrenar: false
+            },
+            precio: {
+                monto: 130000,
+                divisa: 'USD'
+            },
+            metraje: {
+                total: 120,
+                edificado: 110
+            },
+            habitaciones: {
+                dormitorios: 2,
+                banos: 1
+            },
+            descripcion: 'Espectacular apartamento a mts de la rambla',
+            imagenes: [
+                'imagenes/inmuebles/apartamento-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-2.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-3.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-2.jpg',
+                'imagenes/inmuebles/apartamento-cocina-1.jpg',
+                'imagenes/inmuebles/apartamento-dormitorio-1.jpg',
+                'imagenes/inmuebles/apartamento-living-comedor-1.jpg',
+               
+            ],
+            ubicacion: {
+                departamento: 'Montevideo',
+                barrio: 'Puerto del Buceo',
+                codigoPostal: '11100'
+            },
+            referencia: '015',
             amenities: {
                 garaje: true,
                 jardin: false,
