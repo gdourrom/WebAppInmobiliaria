@@ -865,6 +865,9 @@ function getDataFromAPI(filtros) {
             const laOperacionCoincide = propiedad.operacion === filtros.tipoDeOperacion
 
             // Amenities
+            
+                
+            
             const conGaraje = filtros.amenities.garaje ? propiedad.amenities.garaje : true
             const tieneSeguridad = filtros.amenities.seguridad ? propiedad.amenities.seguridad : true
             const tieneJardin = filtros.amenities.jardin ? propiedad.amenities.jardin : true
@@ -872,6 +875,7 @@ function getDataFromAPI(filtros) {
             const estaAmueblado = filtros.amenities.amueblado ? propiedad.amenities.amueblado : true
             const tienePiscina = filtros.amenities.piscina ? propiedad.amenities.piscina : true
 
+         
             // Estado 
 
             const propiedadEnConstruccion = filtros.estado.enConstruccion ? propiedad.estado.enConstruccion : true
@@ -880,15 +884,26 @@ function getDataFromAPI(filtros) {
            
 
             // Dormitorios
-            const tieneUnDormitorio = filtros.habitaciones.dormitorios ? propiedad.habitaciones.dormitorios === 1 : true
-            const tieneDosDormitorios = filtros.habitaciones.dormitorios ? propiedad.habitaciones.dormitorios === 2 : true
-            const tieneTresDormitorios = filtros.habitaciones.dormitorios ? propiedad.habitaciones.dormitorios === 3 : true
-            const tieneCuatroDormitorios = filtros.habitaciones.dormitorios ? propiedad.habitaciones.dormitorios === 4 : true
-            const tieneCincoMasDormitorios = filtros.habitaciones.dormitorios ? propiedad.habitaciones.dormitorios >= 5 : true
+            const tieneUnDormitorio = filtros.habitaciones.unDormitorio ? propiedad.habitaciones.dormitorios === 1 : true
+            const tieneDosDormitorios = filtros.habitaciones.dosDormitorios ? propiedad.habitaciones.dormitorios === 2 : true
+            const tieneTresDormitorios = filtros.habitaciones.tresDormitorios ? propiedad.habitaciones.dormitorios === 3 : true
+            const tieneCuatroDormitorios = filtros.habitaciones.cuatroDormitorios ? propiedad.habitaciones.dormitorios === 4 : true
+            const tieneCincoMasDormitorios = filtros.habitaciones.cincoMasDormitorios ? propiedad.habitaciones.dormitorios  >= 5 : true
+            const tieneUnoYdosDormitorios = filtros.habitaciones.unoYdosDormitorios ? tieneUnDormitorio && tieneDosDormitorios : true
+            
+           console.log('un ' + tieneUnDormitorio);
+           console.log('Dos ' + tieneDosDormitorios);
+           console.log('Tres ' + tieneTresDormitorios);
+           console.log('Cuatro ' + tieneCuatroDormitorios);
+           console.log('Cinco + ' + tieneCincoMasDormitorios);
+           console.log('uno y dos : ' + tieneUnoYdosDormitorios);
 
+            
 
             // Resultado del filtro
-            return laOperacionCoincide && mostrarCasas && mostrarApartamentos && conGaraje && tieneSeguridad && tieneJardin && tieneCalefaccion && tienePiscina && estaAmueblado && propiedadAEstrenar && porpiedadUsada && propiedadEnConstruccion && tieneUnDormitorio && tieneDosDormitorios && tieneTresDormitorios && tieneCuatroDormitorios && tieneCincoMasDormitorios
+            return laOperacionCoincide && mostrarCasas && mostrarApartamentos && propiedadAEstrenar && porpiedadUsada && propiedadEnConstruccion && tieneUnDormitorio && tieneDosDormitorios && tieneTresDormitorios && tieneCuatroDormitorios && tieneCincoMasDormitorios && tieneUnoYdosDormitorios
+       
+            
         }
     )
 
@@ -925,12 +940,14 @@ function applyFilter() {
             amueblado: document.querySelector('#amenityAmueblado').checked,
             calefaccion: document.querySelector('#amenityCalefaccion').checked,
         },
-        dormitorios: {
+        habitaciones: {
+            // dormitorios
             unDormitorio: document.querySelector('#cantidadDormitorios1').checked,
             dosDormitorios: document.querySelector('#cantidadDormitorios2').checked,
             tresDormitorios: document.querySelector('#cantidadDormitorios3').checked,
             cuatroDormitorios: document.querySelector('#cantidadDormitorios4').checked,
-            cincoMasDormitorios: document.querySelector('#cantidadDormitorios5mas').checked
+            cincoMasDormitorios: document.querySelector('#cantidadDormitorios5mas').checked,
+            unoYdosDormitorios: document.querySelector('#cantidadDormitorios1').checked && document.querySelector('#cantidadDormitorios2').checked
         },
     }
 
