@@ -29,6 +29,7 @@
     transition: background-color ease .3s;
     height: 100%;
     padding-top: 28px;
+    font-weight: 400;
 }
 
 .desktop-menu > nav > a:hover {

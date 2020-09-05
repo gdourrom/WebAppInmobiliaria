@@ -1,21 +1,368 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="es">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <title>Web app inmuebles</title>
-  </head>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;500;600;900&display=swap" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="estilos/general.css">
+  <link rel="stylesheet" href="estilos/navigation.css">
+  <link rel="stylesheet" href="estilos/text.css">
+  <link rel="stylesheet" href="estilos/publicar.css">
+
+  <title>Publicar Inmueble - Web app inmuebles </title>
+</head>
   <body>
-    <header></header>
+    <div class="nav-sup-bar">
+      <a href="inicio-de-sesion.html">INGRESAR</a>
+      <a href="registro.html">REGISTRO</a>
+      <a href="publicacion-de-inmueble.html"><button class="btn-nav-sup-bar">PUBLICAR</button></a>
+  </div>
+  <!-- Navegacion Desktop -->
+  <header class="desktop-menu">
+      <a href="index.html">
+          <img class="logo" src="imagenes/sweet-home.svg">
+      </a>
 
-    <main></main>
+      <nav class="desktop-menu-actions">
+          <a href="inmuebles.html">Venta</a>
+          <a href="inmuebles.html">Alquiler</a>
+          <a href="inmuebles.html">Proyectos</a>
+          <a href="inmobiliarias.html">Inmobiliarias</a>
+      </nav>
+  </header>
+
+  <!-- Navegacion Mobile -->
+  <header class="mobile-menu">
+      <img class="logo" src="imagenes/sweet-home.svg">
+
+      <button onclick="toggleMobileMenu()">
+          <i class="fas fa-bars fa-lg"></i>
+      </button>
+  </header>
+
+  <nav class="mobile-menu-actions">
+      <a href="inmuebles.html">Venta</a>
+      <a href="inmuebles.html">Alquiler</a>
+      <a href="inmuebles.html">Proyectos</a>
+      <a href="inmobiliarias.html">Inmobiliarias</a>
+      <a class="login-button" href="inicio-de-sesion.html">Iniciar Sesión</a>
+  </nav>
+
+  <main class="container">
+    <div class="col-12 subTitulo">
+      <h2>Datos la Propiedad</h2>
+
+    </div>
+    <div class="row col-12">
+      <!-- Titulo  -->
+      <div class="col-12 publicarContainer">
+        <div class="cards">
+
+          <input type="text" name="publicarTitulo" id="publicarTitulo" placeholder="Titulo">  <br>
+          <span id="publicacionErrorTitulo"></span>
+        </div>    
+         
+      </div>
+      <!-- Descripcion -->
+      <div class="col-md-12 publicarContainer">
+        <div class="cards">
+
+            <textarea name="publicarDescripcion" id="publicarDescripcion" rows="10" cols="50" placeholder="Tu descripción aqui"></textarea>
+            <span id="publicacionErrorDescripcion"></span>   
+        </div> 
+        
+      </div>
+      <!-- Divisa y precio -->
+      <div class="col-md-4 col-sm-12 publicarContainer">
+        <div class="cards">
+            
+          <input type="radio" name="publicacionDivisa" id="publicacionDolares" checked>
+            <label for="publicacionDolares"> USD </label>
+            
+          <input type="radio" name="publicacionDivisa" id="publicacionPesos">
+            <label for="publicacionPesos"> $ </label> 
+  
+          <input type="text" name="publicacionPrecio" id="publicacionPrecio" placeholder="Ingresar el precio">
+          <span id="publicacionErrorDivisa"></span>   
+        </div> 
+       
+      </div>
+      <!-- Tipo de Operacion -->
+      <div class="col-md-8 col-sm-12 publicarContainer">
+        <div class="cards">
+            <h4>Seleccionar tipo de Operación</h4>
+          <input type="radio" name="publicarTipoDeOperacion" id="publicarTipoDeOperacionVenta" checked>
+            <label for="publicarTipoDeOperacionVenta"> Venta </label>
+            
+          <input type="radio" name="publicarTipoDeOperacion" id="publicarTipoDeOperacionAlquiler">
+            <label for="publicarTipoDeOperacionAlquiler"> Alquiler </label> 
+
+            <input type="radio" name="publicarTipoDeOperacion" id="publicarTipoDeOperacionAlquilerTemporal">
+            <label for="publicarTipoDeOperacionAlquilerTemporal"> Alquiler Temporal </label> 
+        </div> 
+       
+      </div>
+
+      <!-- Tipo de Propiedad -->
+      <div class="col-md-4 col-sm-12 publicarContainer">
+        <div class="cards">
+            <h4>Seleccionar tipo de Propiedad</h4>
+          <input type="radio" name="publicarTipoDePropiedad" id="publicarTipoDePropiedadCasa" checked>
+            <label for="publicarTipoDePropiedadCasa"> Casa </label>
+            
+          <input type="radio" name="publicarTipoDePropiedad" id="publicarTipoDePropiedadApartamento">
+            <label for="publicarTipoDePropiedadApartamento"> Apartamento </label> 
+
+        </div> 
+         
+      </div>
+      <!-- Dormitorios y baños -->
+      <div class="col-md-8 col-sm-12 publicarContainer" >
+        <div class="cards dormitoriosBanos">
+           <div>
+            <h4>Cantidad de Dormitorios</h4>
+            <select id="dormitorios" name="dormitorios">
+              <option value=""></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+            <span id="publicacionErrorDormitorios"></span>   
+
+           </div>
+
+           <div>
+            <h4>Cantidad de Baños</h4>
+            <select id="banos" name="banos">
+              <option value=""></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+            </select>
+            <span id="publicacionErrorbanos"></span>   
+           </div>
+           
+
+        </div> 
+        
+      </div>
+
+      <!-- Ubicación/Dirección  -->
+
+      <div class="col-md-12 publicarContainer">
+        <div class="cards  dropdownSelectUbicación">
+          <div class="col-md-4 col-sm-12">
+            <input type="text" name="publicarDireccion" id="publicarDireccion" placeholder="Direccion"> 
+            <span id="publicacionErrorDireccion"></span>    
+          </div>
+
+          <div class="col-md-3 col-sm-12 depBarrio">
+            <h4>Departamento</h4>
+            <select id="departamento" name="departamento">
+              <option value=""></option>
+              <option value="montevideo">Montevideo</option>
+              <option value="maldonado">Maldonado</option>
+              <option value="artigas">Artigas</option>
+              <option value="canelones">Canelones</option>
+              <option value="cerroLargo">Cerro Largo</option>
+              <option value="colonia">Colonia</option>
+              <option value="durazno">Durazno</option>
+              <option value="flores">Flores</option>
+              <option value="florida">Florida</option>
+              <option value="lavalleja">Lavalleja</option>
+              <option value="paysandu">Paysandú</option>
+              <option value="rioNegro">Río Negro</option>
+              <option value="rivera">Rivera</option>
+              <option value="rocha">Rocha</option>
+              <option value="salto">Salto</option>
+              <option value="sanJose">San José</option>
+              <option value="soriano">Soriano</option>
+              <option value="tacuarembo">Tacuarembó</option>
+              <option value="treintaYtres">Treinta y Tres</option>
+            </select>
+            <span id="publicacionErrorDepartamento"></span>   
+
+           </div>
+
+           <div class="col-md-3 col-sm-12 depBarrio">
+            <h4>Barrio</h4>
+            <select id="barrio" name="barrio">
+              <option value=""></option>
+              <option value="aguada">Aguada</option>
+              <option value="pocitos">Pocitos</option>
+              <option value="tresCruces">Tres Cruces</option>
+              <option value="cordon">Cordón</option>
+              <option value="malvin">Malvin</option>
+              <option value="parqueBattle">Parque Battle</option>
+              <option value="parqueRodo">Parque Rodo</option>
+            </select>
+            <span id="publicacionErrorBarrio"></span>   
+           </div>
+
+           <div class="col-md-2 col-sm-12">
+            <input type="text" name="publicarCodigoPostal" id="publicarCodigoPostal" placeholder="Codigo Postal">  
+            <span id="publicacionErrorCodigoPostal"></span>
+          </div>
+          
+        </div>    
+         
+      </div>
+      <!-- Amenities  -->
+
+      <div class="col-md-12 publicarContainer">
+        <div class="cards publicarAmenities">
+          <h4>Seleccionar los Amenities</h4>
+          <div class="col-md-3 amnitiesSpace">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="amenityGaraje">
+              <label class="form-check-label" for="amenityGaraje">
+                  Garaje
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="amenityJardin">
+              <label class="form-check-label" for="amenityJardin">
+                  Jardin
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3 amnitiesSpace">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="amenitySeguridad">
+              <label class="form-check-label" for="amenitySeguridad">
+                  Seguridad
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="amenityPiscina">
+              <label class="form-check-label" for="amenityPiscina">
+                  Piscina
+              </label>
+            </div>
+          </div>
+
+          <div class="col-md-3 amnitiesSpace">  
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="amenityAmueblado">
+              <label class="form-check-label" for="amenityAmueblado">
+                  Amueblado
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="amenityCalefaccion">
+              <label class="form-check-label" for="amenityCalefaccion">
+                  Calefacción
+              </label>
+            </div>
+          </div> 
+        </div>    
+      </div>
+      <!-- subir varias fotos  -->
+      <div class="col-md-6 col-sm-12 publicarContainer">
+        <div class="cards">
+                <h4>Seleccionar una o más imagenes</h4>
+                
+                <input id="publicarSubirImagen" type="file" id="file" accept="image/*" multiple>
+                <span id="publicacionErrorSubirImagenes"></span>
+        </div>    
+         
+
+      </div>
+
+     
+     
+      <!-- Datos de contacto  -->
+      <!-- Nombre contacto -->
+      <div class="col-12 subTitulo">
+        <h2>Datos de Contacto</h2>
+
+      </div>
+      
+      <div class="col-md-6 publicarContainer">
+        
+        <div class="cards">
+
+          <input type="text" name="nombreContacto" id="nombreContacto" placeholder="Nombre de contacto">  
+          <span id="publicarErrorNombreContacto"></span>
+        </div>    
+     
+        
+      </div>
+
+      <!-- Nombre de Inmobiliaria -->
+      <div class="col-md-6 publicarContainer">
+        <div class="cards">
+
+          <input type="text" name="nombreInmobiliaria" id="nombreInmobiliaria" placeholder="Nombre Inmobiliaria">  
+          <span id="publicarErrorNombreInmobiliaria"></span>
+        </div>    
+     
+         
+      </div>
+      <!-- Teléfono de contacto -->
+      <div class="col-md-6 publicarContainer">
+        <div class="cards">
+
+          <input type="tel" name="telefonoContacto" id="telefonoContacto" placeholder="Ingresa un telefono de contacto">  
+          <span id="publicarErrorTelefonoContacto"></span>
+        </div>    
+     
+         
+      </div>
+      <!-- Email de contacto -->
+      <div class="col-md-6 publicarContainer">
+        <div class="cards">
+
+          <input type="email" name="emailContacto" id="emailContacto" placeholder="email@ejemplo.com">  
+          <span id="publicarErrorEmailContacto"></span>
+        </div>    
+     
+         
+      </div>
+
+
+
+
+
+
+
+
+
+
+        <!-- boton de subir propiedad -->
+      <div class="btnPublicarContainer">
+        <span id="publicarErrorGeneral"></span> 
+        <button onclick="validarPublicacion()" class="btnPublicar">Publicar</button>
+
+      </div>
+      
+      
+
+    </div>
+
+  </main>
 
     <footer></footer>
+    <script src="scripts/publicar.js"></script>
 
     <!-- jQuery, Popper.js, Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

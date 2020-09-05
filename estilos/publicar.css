@@ -1,0 +1,179 @@
+
+.subTitulo{
+    padding:20px 0;
+}
+
+.subTitulo > h2 {
+    font-weight: 300;
+}
+
+.publicarContainer{
+    padding:10px;
+}
+
+
+
+.radioType {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin:5px 10px 0;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    width: 90%;
+   
+}
+
+input[type=checkbox] {
+    width: 10px;
+}
+
+
+input[type=email], input[type=password], [type=text], [type=tel]{
+    padding:5px;
+    border-top: none;
+    border-left:none;
+    border-right: none;
+    border-bottom: 1px solid rgb(80, 8, 80);
+}
+
+input:focus{
+    border-top: none;
+    border-left:none;
+    border-right: none;
+    outline-color: rgba(255, 255, 255, 0);
+
+} 
+input[type=radio]{
+    width:20px;
+    
+ 
+}
+.cards {
+    min-height: 150px;
+}
+
+.dormitoriosBanos{
+    display: flex;
+    justify-content: space-around;
+}
+
+label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.cards h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    padding-bottom: 20px;
+}
+
+textarea {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    width: 100%;
+    min-height: 100%;
+    padding:10px;
+    border:1px solid rgb(80, 8, 80);
+    
+}
+
+
+.dropdownSelect{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+select{
+    width:100%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.dropdownSelectUbicación{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.depBarrio{
+    padding:0 5px;
+}
+.depBarrio h4{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    padding-bottom: 0;
+}
+.publicarAmenities{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.amnitiesSpace{
+    width:100%;
+}
+
+.btnPublicarContainer{
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.btnPublicar{
+    width: 200px;
+    color: white;
+    border: 1px solid #673AB7;
+    background-color: #673AB7;
+    border-radius: 3px;
+    padding:10px 0px;
+}
+.btnPublicar:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,0.19), 0 4px 4px rgba(0,0,0,0.23);
+}
+
+
+#publicacionErrorTitulo,
+#publicacionErrorDescripcion,
+#publicacionErrorDivisa,
+#publicacionErrorDormitorios,
+#publicacionErrorbanos,
+#publicacionErrorDireccion,
+#publicacionErrorDepartamento,
+#publicacionErrorBarrio,
+#publicacionErrorCodigoPostal,
+#publicacionErrorSubirImagenes,
+#publicarErrorNombreContacto,
+#publicarErrorNombreInmobiliaria,
+#publicarErrorTelefonoContacto,
+#publicarErrorEmailContacto {
+    color:rgb(243, 4, 84);
+    font-size: 12px;
+    float: right;
+    padding-top:10px;
+}
+
+
+
+
+
+@media (max-width:767px){
+    .publicarAmenities{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .dropdownSelectUbicación {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .depBarrio {
+        padding: 20px 0;
+    }
+}

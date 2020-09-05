@@ -884,25 +884,59 @@ function getDataFromAPI(filtros) {
            
 
             // Dormitorios
-            const tieneUnDormitorio = filtros.habitaciones.unDormitorio ? propiedad.habitaciones.dormitorios === 1 : true
-            const tieneDosDormitorios = filtros.habitaciones.dosDormitorios ? propiedad.habitaciones.dormitorios === 2 : true
-            const tieneTresDormitorios = filtros.habitaciones.tresDormitorios ? propiedad.habitaciones.dormitorios === 3 : true
-            const tieneCuatroDormitorios = filtros.habitaciones.cuatroDormitorios ? propiedad.habitaciones.dormitorios === 4 : true
-            const tieneCincoMasDormitorios = filtros.habitaciones.cincoMasDormitorios ? propiedad.habitaciones.dormitorios  >= 5 : true
-            const tieneUnoYdosDormitorios = filtros.habitaciones.unoYdosDormitorios ? tieneUnDormitorio && tieneDosDormitorios : true
-            
-           console.log('un ' + tieneUnDormitorio);
-           console.log('Dos ' + tieneDosDormitorios);
-           console.log('Tres ' + tieneTresDormitorios);
-           console.log('Cuatro ' + tieneCuatroDormitorios);
-           console.log('Cinco + ' + tieneCincoMasDormitorios);
-           console.log('uno y dos : ' + tieneUnoYdosDormitorios);
+
+            let unDormitorio = false;
+            let dosDormitorios = false;
+            let tresDormitorios = false;
+            let cuatroDormitorios = false;
+            let cincoMasDormitorios = false;
+
+            if ((
+                filtros.habitaciones.unDormitorio &&
+                filtros.habitaciones.dosDormitorios &&
+                filtros.habitaciones.tresDormitorios &&
+                filtros.habitaciones.cuatroDormitorios &&
+                filtros.habitaciones.cincoMasDormitorios
+                ) || (
+                    !filtros.habitaciones.unDormitorio &&
+                    !filtros.habitaciones.dosDormitorios &&
+                    !filtros.habitaciones.tresDormitorios &&
+                    !filtros.habitaciones.cuatroDormitorios &&
+                    !filtros.habitaciones.cincoMasDormitorios)) {
+                    unDormitorio = true
+                    dosDormitorios = true
+                    tresDormitorios = true
+                    cuatroDormitorios = true
+                    cincoMasDormitorios  = true
+                } else {
+                    if (filtros.habitaciones.unDormitorio) {
+                        unDormitorio = propiedad.habitaciones.dormitorios === 1
+                    }
+                    if (filtros.habitaciones.dosDormitorios) {
+                        dosDormitorios = propiedad.habitaciones.dormitorios === 2
+                    }
+                    if (filtros.habitaciones.tresDormitorios) {
+                        tresDormitorios = propiedad.habitaciones.dormitorios === 3
+                    }
+                    if (filtros.habitaciones.cuatroDormitorios) {
+                        cuatroDormitorios = propiedad.habitaciones.dormitorios === 4
+                    }
+                    if (filtros.habitaciones.cincoMasDormitorios) {
+                        cincoMasDormitorios = propiedad.habitaciones.dormitorios  >= 5
+                    }
+                }
+
 
             
 
-            // Resultado del filtro
-            return laOperacionCoincide && mostrarCasas && mostrarApartamentos && propiedadAEstrenar && porpiedadUsada && propiedadEnConstruccion && tieneUnDormitorio && tieneDosDormitorios && tieneTresDormitorios && tieneCuatroDormitorios && tieneCincoMasDormitorios && tieneUnoYdosDormitorios
-       
+        // Resultado del filtro
+        return laOperacionCoincide &&
+        mostrarCasas &&
+        mostrarApartamentos &&
+        propiedadAEstrenar &&
+        porpiedadUsada &&
+        propiedadEnConstruccion &&
+        (unDormitorio || dosDormitorios || tresDormitorios || cuatroDormitorios || cincoMasDormitorios)
             
         }
     )

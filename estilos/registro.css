@@ -38,14 +38,14 @@ input {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     width: 90%;
-    height: 40px;
+   
 }
 input[type=email], input[type=password], [type=text], [type=tel] {
     padding:5px;
     border-top: none;
     border-left:none;
     border-right: none;
-    border-bottom: 1px solid rgb(80, 8, 80);;
+    border-bottom: 1px solid rgb(80, 8, 80);
 }
 
 input:focus{

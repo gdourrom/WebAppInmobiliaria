@@ -4,21 +4,26 @@
     margin-bottom: 40px;
     
 }
-
+.fixed {
+    display:flex;
+    flex-direction: column;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 140px;
+}
 .filters {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
+    font-weight: 200;
     background-color: white;
     height: auto;
     padding:10px 10px;
     border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    
 }
 
-.filters > h4 {
+.fixed > h4{
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    font-weight: 300;
     color: #673AB7;
 
     
@@ -36,15 +41,17 @@
     
 }
 
-.filters > p {
+.fixed > p {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
+    font-weight: 400;
+    color: #673AB7;
+
 }
-.filtros > label {
+.fixed > label {
     font-family: 'Montserrat', sans-serif;
     font-weight: 200;
 }
-.filters > button {
+.fixed > button {
     font-family: 'Roboto', sans-serif;
     background-color: #4CAF50;
     border: 3px solid #4CAF50;
@@ -54,11 +61,11 @@
     padding: 4px;
 }
 
-.filters > button:hover {
+.fixed > button:hover {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
-.filters > button:focus {
+.fixed > button:focus {
     outline: none;
 }
 
