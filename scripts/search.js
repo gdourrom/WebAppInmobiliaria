@@ -74,7 +74,7 @@ function getDataFromAPI(filtros) {
             },
             habitaciones: {
                 dormitorios: 2,
-                banos: 1
+                banos: 2
             },
             descripcion: 'Hermosa casa en Reducto',
             imagenes: [
@@ -927,7 +927,49 @@ function getDataFromAPI(filtros) {
                 }
 
 
+            // Baños
             
+
+            let cantidadBaños1 = false;
+            let cantidadBaños2  = false;
+            let cantidadBaños3  = false;
+            let cantidadBaños4  = false;
+            let cantidadBaños5Mas = false;
+
+            if ((
+                filtros.habitaciones.cantidadBaños1 &&
+                filtros.habitaciones.cantidadBaños2 &&
+                filtros.habitaciones.cantidadBaños3 &&
+                filtros.habitaciones.cantidadBaños4 &&
+                filtros.habitaciones.cantidadBaños5Mas
+                ) || (
+                    !filtros.habitaciones.cantidadBaños1 &&
+                    !filtros.habitaciones.cantidadBaños2 &&
+                    !filtros.habitaciones.cantidadBaños3 &&
+                    !filtros.habitaciones.cantidadBaños4 &&
+                    !filtros.habitaciones.cantidadBaños5Mas)) {
+                    cantidadBaños1 = true
+                    cantidadBaños2 = true
+                    cantidadBaños3 = true
+                    cantidadBaños4 = true
+                    cantidadBaños5Mas  = true
+                } else {
+                    if (filtros.habitaciones.cantidadBaños1) {
+                        cantidadBaños1 = propiedad.habitaciones.banos === 1
+                    }
+                    if (filtros.habitaciones.cantidadBaños2) {
+                        cantidadBaños2 = propiedad.habitaciones.banos === 2
+                    }
+                    if (filtros.habitaciones.cantidadBaños3) {
+                        cantidadBaños3 = propiedad.habitaciones.banos === 3
+                    }
+                    if (filtros.habitaciones.cantidadBaños4) {
+                        cantidadBaños4 = propiedad.habitaciones.banos === 4
+                    }
+                    if (filtros.habitaciones.cantidadBaños5Mas) {
+                        cantidadBaños5Mas = propiedad.habitaciones.banos  >= 5
+                    }
+                }
 
         // Resultado del filtro
         return laOperacionCoincide &&
@@ -936,7 +978,8 @@ function getDataFromAPI(filtros) {
         propiedadAEstrenar &&
         porpiedadUsada &&
         propiedadEnConstruccion &&
-        (unDormitorio || dosDormitorios || tresDormitorios || cuatroDormitorios || cincoMasDormitorios)
+        (unDormitorio || dosDormitorios || tresDormitorios || cuatroDormitorios || cincoMasDormitorios) &&
+        (cantidadBaños1 || cantidadBaños2 || cantidadBaños3 || cantidadBaños4 || cantidadBaños5Mas)
             
         }
     )
@@ -981,7 +1024,15 @@ function applyFilter() {
             tresDormitorios: document.querySelector('#cantidadDormitorios3').checked,
             cuatroDormitorios: document.querySelector('#cantidadDormitorios4').checked,
             cincoMasDormitorios: document.querySelector('#cantidadDormitorios5mas').checked,
-            unoYdosDormitorios: document.querySelector('#cantidadDormitorios1').checked && document.querySelector('#cantidadDormitorios2').checked
+            unoYdosDormitorios: document.querySelector('#cantidadDormitorios1').checked && document.querySelector('#cantidadDormitorios2').checked,
+
+            // baños 
+            cantidadBaños1 : document.querySelector('#cantidadBaños1').checked, 
+            cantidadBaños2  : document.querySelector('#cantidadBaños2').checked,
+            cantidadBaños3  : document.querySelector('#cantidadBaños3').checked,
+            cantidadBaños4  : document.querySelector('#cantidadBaños4').checked,
+            cantidadBaños5Mas : document.querySelector('#cantidadBaños5Mas').checked,
+
         },
     }
 
