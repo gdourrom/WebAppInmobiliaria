@@ -21,6 +21,19 @@ const calefaccion = document.querySelector('#amenityCalefaccion').checked;
 const publicarSubirImagen = document.getElementById("publicarSubirImagen").value;
 
 // Datos de contacto
+// const datosContacto = {
+//     nombre : document.getElementById("nombreContacto").value,
+//     inmobiliaria : document.getElementById("nombreInmobiliaria").value,
+//     telefono : document.getElementById("telefonoContacto").value,
+//     email : document.getElementById("emailContacto").value,
+// };
+
+// const resultContacto = Object.entries(datosContacto).length === 1
+
+// if (resultContacto == false){
+//     alert("No Completaste nada!! ta mal!");
+// }
+
 const nombreContacto = document.getElementById("nombreContacto").value;
 const nombreInmobiliaria = document.getElementById("nombreInmobiliaria").value;
 const telefonoContacto = document.getElementById("telefonoContacto").value;
