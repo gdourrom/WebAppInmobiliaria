@@ -23,7 +23,7 @@
 
         <title>Inmuebles - Web app inmuebles </title>
     </head>
-    <body onload="readUrlParameters(); applyFilter()">
+    <body id="top" onload="readUrlParameters(); applyFilter()" >
         <div class="nav-sup-bar">
             <a href="inicio-de-sesion.html">INGRESAR</a>
             <a href="registro.html">REGISTRO</a>
@@ -75,19 +75,19 @@
                     <!-- Tipo de operacion -->
                     <p>Tipo de operacion</p>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="tipoDeOperacion" id="tipoDeOperacionVenta" value="Venta">
+                        <input  onclick="applyFilter(); irArriba();" class="form-check-input" type="radio" name="tipoDeOperacion" id="tipoDeOperacionVenta" value="Venta">
                         <label class="form-check-label" for="tipoDeOperacionVenta">
                             Venta
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="tipoDeOperacion" id="tipoDeOperacionAlquiler" value="Alquiler">
+                        <input  onclick="applyFilter(); irArriba();" class="form-check-input" type="radio" name="tipoDeOperacion" id="tipoDeOperacionAlquiler" value="Alquiler">
                         <label class="form-check-label" for="tipoDeOperacionAlquiler">
                             Alquiler
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="tipoDeOperacion" id="tipoDeOperacionAlquilerTemporal" value="AlquilerTemporal">
+                        <input  onclick="applyFilter(); irArriba();" class="form-check-input" type="radio" name="tipoDeOperacion" id="tipoDeOperacionAlquilerTemporal" value="AlquilerTemporal">
                         <label class="form-check-label" for="tipoDeOperacionAlquilerTemporal">
                             Alquiler temporal
                         </label>
@@ -98,112 +98,134 @@
                     <!-- Tipo de propiedad -->
                     <p>Tipo de propiedad</p>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="tipoDePropiedadCasa">
+                        <input  onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value="" id="tipoDePropiedadCasa">
                         <label class="form-check-label" for="tipoDePropiedadCasa">
                             Casa
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="tipoDePropiedadApartamento">
+                        <input  onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value="" id="tipoDePropiedadApartamento">
                         <label class="form-check-label" for="tipoDePropiedadApartamento">
                             Apartamento
                         </label>
                     </div>
 
                     <hr>
-
-                    <!-- Rango de precios -->
-
-                    <!-- Metros edificados -->
-
-                    <!-- Metros totales -->
-
                     <!-- Dormitorios -->
                     <p>Dormitorios</p>
-                    <div class="dormitorios-list">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="1" id="cantidadDormitorios1">
-                        <label class="form-check-label" for="cantidadDormitorios1">
-                            1
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="2" id="cantidadDormitorios2">
-                        <label class="form-check-label" for="cantidadDormitorios2">
-                            2
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="3" id="cantidadDormitorios3">
-                        <label class="form-check-label" for="cantidadDormitorios3">
-                            3
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="4" id="cantidadDormitorios4">
-                        <label class="form-check-label" for="cantidadDormitorios4">
-                            4
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value=">5" id="cantidadDormitorios5mas">
-                        <label class="form-check-label" for="cantidadDormitorios5mas">
-                            5+
-                        </label>
-                    </div>
+                    <div class="habitaciones-list">
+                        <div class="form-check">
+                            <input  onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value="1" id="cantidadDormitorios1">
+                            <label class="form-check-label" for="cantidadDormitorios1">
+                                1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input  onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value="2" id="cantidadDormitorios2">
+                            <label class="form-check-label" for="cantidadDormitorios2">
+                                2
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input  onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value="3" id="cantidadDormitorios3">
+                            <label class="form-check-label" for="cantidadDormitorios3">
+                                3
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input  onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value="4" id="cantidadDormitorios4">
+                            <label class="form-check-label" for="cantidadDormitorios4">
+                                4
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input  onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value=">5" id="cantidadDormitorios5mas">
+                            <label class="form-check-label" for="cantidadDormitorios5mas">
+                                5+
+                            </label>
+                        </div>
                     </div>
                     <hr>
                     <!-- Banios -->
                     <p>Baños</p>
-                    <div class="dormitorios-list">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="1" id="cantidadBaños1">
-                        <label class="form-check-label" for="cantidadBaños1">
-                            1
-                        </label>
+                    <div class="habitaciones-list">
+                        <div class="form-check">
+                            <input onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value="1" id="cantidadBaños1">
+                            <label class="form-check-label" for="cantidadBaños1">
+                                1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value="2" id="cantidadBaños2">
+                            <label class="form-check-label" for="cantidadBaños2">
+                                2
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value="3" id="cantidadBaños3">
+                            <label class="form-check-label" for="cantidadBaños3">
+                                3
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value="4" id="cantidadBaños4">
+                            <label class="form-check-label" for="cantidadBaños4">
+                                4
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value=">5" id="cantidadBaños5Mas">
+                            <label class="form-check-label" for="cantidadBaños5Mas">
+                                5+
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="2" id="cantidadBaños2">
-                        <label class="form-check-label" for="cantidadBaños2">
-                            2
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="3" id="cantidadBaños3">
-                        <label class="form-check-label" for="cantidadBaños3">
-                            3
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="4" id="cantidadBaños4">
-                        <label class="form-check-label" for="cantidadBaños4">
-                            4
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value=">5" id="cantidadBaños5Mas">
-                        <label class="form-check-label" for="cantidadBaños5Mas">
-                            5+
-                        </label>
-                    </div>
+                    <hr>
+                    <!-- Rango de precios -->
+
+                    <!-- Metros consturidos y totlaes -->
+                    <p>Metraje</p>
+                    <div class="m2TotalesConstruidos col-12">
+                        <!-- Seleccion de metraje TOTAL / EDIFICADO -->
+                       <div class="col-md-12">
+
+
+                        <input type="radio" id="m2Edif" name="m2-type" value="m2Edif">
+                        <label for="m2Edif">M&sup2; Edificados</label><br>
+
+                        <input type="radio" id="m2Tot" name="m2-type" value="m2Tot">
+                        <label for="m2Tot">M&sup2; Totales</label> 
+                        
+                        
+                       </div>
+                        <!-- Desde / Hasta  -->
+                        <div class="m2DesdeHasta">
+                            <div class="metrosCuadrados col-md-5">
+                                <input type="number" name="m2Desde" id="m2Desde" placeholder="Desde">
+                            </div>
+                            <div class="metrosCuadrados col-md-5">
+                                <input type="number" name="m2Hasta" id="m2Hasta" placeholder="Hasta">
+                            </div>
+                        </div>
+                        <button onclick="applyFilter(); irArriba();"> Aplicar </button>
                     </div>
                     <hr>
                     <!-- Estado -->
                     <p>Estado</p>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="estadoEnConstruccion">
+                        <input onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value="" id="estadoEnConstruccion">
                         <label class="form-check-label" for="estadoEnConstruccion">
                             En construccion
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="estadoAEstrenar">
+                        <input onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value="" id="estadoAEstrenar">
                         <label class="form-check-label" for="estadoAEstrenar">
                             A estrenar
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="estadoUsado">
+                        <input onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value="" id="estadoUsado">
                         <label class="form-check-label" for="estadoUsado">
                             Usado
                         </label>
@@ -214,37 +236,37 @@
                     <!-- Amenities -->
                     <p>Amenities</p>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="amenityGaraje">
+                        <input onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value="" id="amenityGaraje">
                         <label class="form-check-label" for="amenityGaraje">
                             Garaje
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="amenityJardin">
+                        <input onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value="" id="amenityJardin">
                         <label class="form-check-label" for="amenityJardin">
                             Jardin
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="amenitySeguridad">
+                        <input onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value="" id="amenitySeguridad">
                         <label class="form-check-label" for="amenitySeguridad">
                             Seguridad
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="amenityPiscina">
+                        <input onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value="" id="amenityPiscina">
                         <label class="form-check-label" for="amenityPiscina">
                             Piscina
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="amenityAmueblado">
+                        <input onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value="" id="amenityAmueblado">
                         <label class="form-check-label" for="amenityAmueblado">
                             Amueblado
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="amenityCalefaccion">
+                        <input onclick="applyFilter(); irArriba();" class="form-check-input" type="checkbox" value="" id="amenityCalefaccion">
                         <label class="form-check-label" for="amenityCalefaccion">
                             Calefacción
                         </label>
