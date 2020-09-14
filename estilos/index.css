@@ -1,30 +1,170 @@
 /* Imagen de fondo con caja de busqueda */
+main {
+    padding: 50px 90px;
+}
 .search-section {
-    padding-top: 80px;
-    padding-bottom: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
 }
 
-.search-section input {
+.input-group {
     border-radius: 3px;
-    border: 2px solid #ff0000;
+    border:none;
     padding: 10px;
-    width: 280px;
+    width: 60%;
+    padding-top:50px;
 }
 
-.search-section button {
+.input-group-append button {
+    background-color: #673AB7;
+    color:white;
     border-radius: 2px;
-    border: 2px solid blue;
-    padding: 10px 40px;
-    font-weight: bold;
+    border: none;
+    padding: 5px 40px;
+    font-weight: 400;
 }
 
-.banners-section {
-    height: 300px;
-    background-color: aquamarine;
+.input-group-append button:hover {
+    background-color: #47208b;
+    color:white;
+    
 }
 
 .quick-filters-section {
     height: 300px;
     background-color: chocolate;
+}
+
+
+.titulo-banner-buscar > h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: #ffffff;
+    font-size: 4em;
+    text-shadow: 3px 2px rgba(0, 0, 0, 0.226);
+
+}
+
+.banner-background{
+    background-image: url(https://www.entornoturistico.com/wp-content/uploads/2018/08/Montevideo-en-Uruguay-1280x720.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+}
+
+.layer{
+    background-color: rgba(41, 41, 39, 0.315);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+.banners-section {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 50px;
+  
+    
+}
+
+.banners-section img {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  
+}
+
+
+.hover-effect img{
+    border:10px solid white;
+    border-radius: 5px;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+.middle > button {
+    background-color: #673AB7;
+    border:none;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+    border-radius: 2px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.13);
+  } 
+  .middle > button:hover {
+    background-color:white;
+    border:#673AB7;
+    color: #673AB7;
+    font-size: 16px;
+    padding: 16px 32px;
+  } 
+.hover-effect:hover img {
+    opacity: 0.3;
+    filter: saturate(20%);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.19), 0 4px 4px rgba(0,0,0,0.23);
+  }
+  
+.hover-effect:hover .middle {
+    opacity: 1;
+   
+  }
+
+.call-to-action {
+    background-image: url(https://cdn2.infocasas.com.uy/web/5c2d0c590385b_infocdn__mapay.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    
+}
+
+.layer-call-to-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(112, 41, 179, 0.664);
+    width: 100%;
+    height: 100%;
+
+}
+
+.call-to-action h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    text-shadow: 3px 2px rgba(0, 0, 0, 0.226);
+    color:white;
+}
+
+.svg-call-to-action{
+    padding:0px 20px;
+    color:white;
+}
+/* moobile version */
+@media (min-width: 400px){
+    body > main {
+        padding: 50px 20px;
+        position: relative;
+    }
 }

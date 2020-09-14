@@ -19,6 +19,7 @@
     padding:10px 10px;
     border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    overscroll-behavior-inline: true;
 }
 
 .fixed > h4{
@@ -44,7 +45,10 @@
 .fixed > p {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    color: #673AB7;
+    background-color: #673AB7;
+    color:white;
+    padding:2px 10px;
+    font-size: 0.9em;
 
 }
 .fixed > label {
@@ -105,10 +109,51 @@
     background-size:cover;
 }
 
-.dormitorios-list{
+/* habitaciones */
+
+.habitaciones-list{
     display: flex;
     width: 100%;
     justify-content: space-between;
+}
+
+/* baños */
+
+.m2TotalesConstruidos {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.metrosCuadrados {
+    padding: 0px;
+}
+.metrosCuadrados > input{
+    width: 90%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+
+}
+
+.metrosCuadrados > p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #673AB7;
+    font-size: 0.9em;
+
+}  
+
+
+.m2DesdeHasta {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 @media (max-width: 575px) {

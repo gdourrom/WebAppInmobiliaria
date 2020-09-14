@@ -11,6 +11,7 @@ hr {
     border:0;
     border-top: 1px solid #b19cd4;
     border-radius: 2px;
+    
 }
 
 
@@ -26,6 +27,40 @@ hr {
 .cards:hover{
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
+/* Input general */
+
+
+input[type=email], input[type=password], [type=text], [type=tel], [type=number]{
+    padding:5px;
+    border-top: none;
+    border-left:none;
+    border-right: none;
+    border-bottom: 1px solid rgb(80, 8, 80);
+}
+
+input:focus{
+    border-top: none;
+    border-left:none;
+    border-right: none;
+    outline-color: rgba(255, 255, 255, 0);
+
+} 
+/* quitar flechas al campo numerico  */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
+.slideUp{
+    animation-name: slideUp;
+    -webkit-animation-name: slideUp;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+}
+
 
 
 /* moobile version */
