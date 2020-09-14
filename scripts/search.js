@@ -863,11 +863,9 @@ function getDataFromAPI(filtros) {
 
             // Operacion
             const laOperacionCoincide = propiedad.operacion === filtros.tipoDeOperacion
-
+            
             // Amenities
-            
-                
-            
+
             const conGaraje = filtros.amenities.garaje ? propiedad.amenities.garaje : true
             const tieneSeguridad = filtros.amenities.seguridad ? propiedad.amenities.seguridad : true
             const tieneJardin = filtros.amenities.jardin ? propiedad.amenities.jardin : true
@@ -970,6 +968,47 @@ function getDataFromAPI(filtros) {
                         cantidadBaños5Mas = propiedad.habitaciones.banos  >= 5
                     }
                 }
+            
+                // metraje
+
+                
+
+                    let inputDesde = filtros.metraje.desde  
+                    let inputHasta = filtros.metraje.hasta
+                    let m2Edificados
+                    
+                    
+                    if (inputDesde == ""){
+                       inputDesde = 0;
+                    }
+                    
+                    if (inputHasta == ""){
+                        inputHasta = 10000;
+                    }
+
+                    
+
+                    if (document.getElementById('m2Edif').checked){
+                       
+                        for(let index = 0; index < propiedad.metraje.length; index++) {
+                            console.log('index');
+                            if(inputDesde <= propiedad.metraje[index].edificado && inputHasta >= propiedad.metraje[index].edificado){
+                               m2Edificados = propiedad.metraje.edificado === propiedad.metraje[index].edificado
+                                
+                            }
+                        }
+                    }else {
+                        for(let index = 0; index < propiedad.length; index++) {
+                            if(inputDesde <= propiedad.metraje[index].total <= inputHasta){
+                                alert("Estas dentro de Totales y sus valores son: " + "desde: " + inputDesde + " hasta: " + inputHasta);
+                                
+                            }
+                        }
+                    }
+
+
+                   
+
 
         // Resultado del filtro
         return laOperacionCoincide &&
@@ -978,9 +1017,9 @@ function getDataFromAPI(filtros) {
         propiedadAEstrenar &&
         porpiedadUsada &&
         propiedadEnConstruccion &&
+        conGaraje && tieneCalefaccion && tieneJardin && tienePiscina && tieneSeguridad && estaAmueblado && 
         (unDormitorio || dosDormitorios || tresDormitorios || cuatroDormitorios || cincoMasDormitorios) &&
-        (cantidadBaños1 || cantidadBaños2 || cantidadBaños3 || cantidadBaños4 || cantidadBaños5Mas)
-            
+        (cantidadBaños1 || cantidadBaños2 || cantidadBaños3 || cantidadBaños4 || cantidadBaños5Mas) && (inputDesde || inputHasta) || m2Edificados
         }
     )
 
@@ -1004,6 +1043,8 @@ function applyFilter() {
             casa: document.querySelector('#tipoDePropiedadCasa').checked,
             apartamento: document.querySelector('#tipoDePropiedadApartamento').checked,
         },
+
+
         estado: {
             enConstruccion: document.querySelector('#estadoEnConstruccion').checked,
             aEstrenar: document.querySelector('#estadoAEstrenar').checked,
@@ -1024,7 +1065,6 @@ function applyFilter() {
             tresDormitorios: document.querySelector('#cantidadDormitorios3').checked,
             cuatroDormitorios: document.querySelector('#cantidadDormitorios4').checked,
             cincoMasDormitorios: document.querySelector('#cantidadDormitorios5mas').checked,
-            unoYdosDormitorios: document.querySelector('#cantidadDormitorios1').checked && document.querySelector('#cantidadDormitorios2').checked,
 
             // baños 
             cantidadBaños1 : document.querySelector('#cantidadBaños1').checked, 
@@ -1032,10 +1072,25 @@ function applyFilter() {
             cantidadBaños3  : document.querySelector('#cantidadBaños3').checked,
             cantidadBaños4  : document.querySelector('#cantidadBaños4').checked,
             cantidadBaños5Mas : document.querySelector('#cantidadBaños5Mas').checked,
+            
+        },      
+        // Metraje
 
-        },
+      
+        
+        metraje: {
+            desde : document.getElementById('m2Desde').value,
+            hasta : document.getElementById('m2Hasta').value,
+        }
+
+
+
+        
+
+        
     }
-
+  
+    
     // Obtenemos la lista de propiedades a mostrar
     const propiedades = getDataFromAPI(filtros)
   
@@ -1057,7 +1112,9 @@ function applyFilter() {
             itemClone.querySelector('.item-title').innerText = propiedades[indiceDePropiedad].tipoDePropiedad + ' en ' +
                 propiedades[indiceDePropiedad].ubicacion.barrio + ' con ' +
                 propiedades[indiceDePropiedad].habitaciones.dormitorios + (propiedades[indiceDePropiedad].habitaciones.banos > 0 ? (propiedades[indiceDePropiedad].habitaciones.dormitorios > 1 ? ' dormitorios y ' : ' dormitorio y ') +
-                propiedades[indiceDePropiedad].habitaciones.banos + (propiedades[indiceDePropiedad].habitaciones.banos > 1 ? ' baños' : ' baño') : (propiedades[indiceDePropiedad].habitaciones.dormitorios > 1 ? ' dormitorios' : ' dormitorio'))
+                propiedades[indiceDePropiedad].habitaciones.banos + (propiedades[indiceDePropiedad].habitaciones.banos > 1 ? ' baños | ' : ' baño | ') : (propiedades[indiceDePropiedad].habitaciones.dormitorios > 1 ? ' dormitorios' : ' dormitorio')) +
+                propiedades[indiceDePropiedad].metraje.edificado + (propiedades[indiceDePropiedad].metraje.edificado > 0 ? ' m2 Edificados ' : ' ') + 
+                propiedades[indiceDePropiedad].metraje.total + (propiedades[indiceDePropiedad].metraje.total > 0 ? ' m2 totales ' : ' ')
 
             // Seteamos el precio
             itemClone.querySelector('.item-price').innerText = propiedades[indiceDePropiedad].precio.monto + ' ' + propiedades[indiceDePropiedad].precio.divisa
@@ -1100,4 +1157,11 @@ function applyFilter() {
         msjAyuda.innerHTML = "La busqueda no obtuvo ningun resultado, intenta con una nueva busqueda o escribenos a alfred@dc.com";
         
     }
+}
+
+function irArriba (){
+
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+
 }
